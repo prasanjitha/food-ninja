@@ -5,10 +5,12 @@ import '../themes/custom_colors.dart';
 class CustomButton extends StatelessWidget {
   final VoidCallback tap;
   final String text;
+  final double fontSize;
   const CustomButton({
     Key? key,
     required this.tap,
     this.text = 'Next',
+    this.fontSize = 24.0,
   }) : super(key: key);
 
   @override
@@ -31,6 +33,7 @@ class CustomButton extends StatelessWidget {
             text,
             style: Theme.of(context).textTheme.headline3!.copyWith(
                   color: CustomColors.BACKGROUND,
+                  fontSize: fontSize,
                 ),
           ),
         ),
