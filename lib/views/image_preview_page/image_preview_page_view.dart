@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/router/routing_constant.dart';
 
 import '../../themes/custom_colors.dart';
 import '../../widgets/back_icon_button.dart';
@@ -96,10 +97,10 @@ class _ImagePreviewPageViewState extends State<ImagePreviewPageView> {
         child: CustomButton(
           text: 'Next',
           tap: () {
-            // Navigator.pushNamed(
-            //   context,
-            //   ImagePreviewRoute,
-            // );
+            Navigator.pushNamed(
+              context,
+              SetLocationRoute,
+            );
           },
         ),
       ),
