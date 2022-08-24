@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
+import 'package:food_ninja/widgets/back_icon_button.dart';
 import 'package:food_ninja/widgets/custom_button.dart';
 import 'package:food_ninja/widgets/custom_icon_button.dart';
 import 'package:food_ninja/widgets/custom_text_field.dart';
@@ -93,7 +95,9 @@ class _SignINPageViewState extends State<SignINPageView> {
                 ),
                 CustomButton(
                   text: 'Login',
-                  tap: () {},
+                  tap: () {
+                    Navigator.pushNamed(context, SignupProcessRoute);
+                  },
                 )
               ],
             ),

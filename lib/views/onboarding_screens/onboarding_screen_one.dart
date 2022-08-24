@@ -37,7 +37,8 @@ class OBScreenOne extends StatelessWidget {
             ),
             CustomButton(
               tap: () {
-                Navigator.popAndPushNamed(context, OBScreenTwoRoute);
+                Navigator.of(context).pushNamed(OBScreenTwoRoute);
+                // Navigator.popAndPushNamed(context, OBScreenTwoRoute);
               },
             )
           ],

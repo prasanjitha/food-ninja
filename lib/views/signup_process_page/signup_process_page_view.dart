@@ -1,4 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:food_ninja/router/routing_constant.dart';
+import 'package:food_ninja/widgets/back_icon_button.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text_field.dart';
 
@@ -23,9 +27,7 @@ class _SignupProcessPageViewState extends State<SignupProcessPageView> {
                 const SizedBox(
                   height: 20.0,
                 ),
-                Image.asset(
-                  'assets/icons/IconBack.png',
-                ),
+                CustomBackIconButton(),
                 const SizedBox(
                   height: 20.0,
                 ),
@@ -61,14 +63,16 @@ class _SignupProcessPageViewState extends State<SignupProcessPageView> {
           ),
         ),
       ),
-      bottomSheet: Align(
-        alignment: Alignment.bottomCenter,
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: CustomButton(
-            text: 'Next',
-            tap: () {},
-          ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 80.0, vertical: 20.0),
+        child: CustomButton(
+          text: 'Next',
+          tap: () {
+            Navigator.pushNamed(
+              context,
+              PaymentMethodRoute,
+            );
+          },
         ),
       ),
     );
