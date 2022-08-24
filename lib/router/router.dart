@@ -4,6 +4,7 @@ import 'package:food_ninja/views/onboarding_screens/onboarding_screen_one.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_three.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_two.dart';
 import 'package:food_ninja/views/signIn_page/sign_in_page_provider.dart';
+import 'package:food_ninja/views/signup_process_page/signup_process_page_provider.dart';
 
 import '../views/sign_up_page/sign_up_page_provider.dart';
 
@@ -31,6 +32,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case SignUpRoute:
       return MaterialPageRoute(
         builder: ((context) => SignUpPageProvider()),
+      );
+    case SignupProcessRoute:
+      return MaterialPageRoute(
+        builder: ((context) => SignupProcessPageProvider()),
       );
     default:
       return MaterialPageRoute(
