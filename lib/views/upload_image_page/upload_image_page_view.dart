@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/widgets/image_upload_container.dart';
 import '../../widgets/back_icon_button.dart';
 import '../../widgets/custom_button.dart';
@@ -68,10 +69,10 @@ class _UploadImagePageViewState extends State<UploadImagePageView> {
         child: CustomButton(
           text: 'Next',
           tap: () {
-            // Navigator.pushNamed(
-            //   context,
-            //   PaymentMethodRoute,
-            // );
+            Navigator.pushNamed(
+              context,
+              ImagePreviewRoute,
+            );
           },
         ),
       ),

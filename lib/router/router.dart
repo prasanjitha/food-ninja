@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_ninja/router/routing_constant.dart';
+import 'package:food_ninja/views/image_preview_page/image_preview_page_provider.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_one.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_three.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_two.dart';
@@ -22,7 +23,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       );
     case OBScreenThreeRoute:
       return MaterialPageRoute(
-        builder: ((context) => const OBScreenThree()),
+        builder: ((context) => OBScreenThree()),
       );
     case SignInRoute:
       return MaterialPageRoute(
@@ -44,7 +45,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: ((context) => UploadImagePageProvider()),
       );
-
+    case ImagePreviewRoute:
+      return MaterialPageRoute(
+        builder: ((context) => ImagePreviewPageProvider()),
+      );
     default:
       return MaterialPageRoute(
         builder: ((context) => const OBScreenOne()),
