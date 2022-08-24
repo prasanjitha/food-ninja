@@ -1,23 +1,16 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:food_ninja/router/routing_constant.dart';
-import 'package:food_ninja/widgets/payment_method_container.dart';
-
-import '../../themes/custom_colors.dart';
-import '../../widgets/activate_title.dart';
+import 'package:food_ninja/widgets/image_upload_container.dart';
 import '../../widgets/back_icon_button.dart';
 import '../../widgets/custom_button.dart';
-import '../../widgets/custom_text_field.dart';
 
-class PaymentMethodPageView extends StatefulWidget {
-  const PaymentMethodPageView({Key? key}) : super(key: key);
+class UploadImagePageView extends StatefulWidget {
+  const UploadImagePageView({Key? key}) : super(key: key);
 
   @override
-  _PaymentMethodPageViewState createState() => _PaymentMethodPageViewState();
+  _UploadImagePageViewState createState() => _UploadImagePageViewState();
 }
 
-class _PaymentMethodPageViewState extends State<PaymentMethodPageView> {
+class _UploadImagePageViewState extends State<UploadImagePageView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +28,7 @@ class _PaymentMethodPageViewState extends State<PaymentMethodPageView> {
                 height: 20.0,
               ),
               Text(
-                'Payment Method',
+                'Upload Your Photo Profile',
                 style: Theme.of(context).textTheme.headline2,
                 textAlign: TextAlign.start,
               ),
@@ -47,18 +40,22 @@ class _PaymentMethodPageViewState extends State<PaymentMethodPageView> {
                 style: Theme.of(context).textTheme.headline5,
               ),
               const SizedBox(
-                height: 40.0,
+                height: 20.0,
               ),
-              const PaymentMethodContainer(iconPath: 'assets/icons/paypal.png'),
+              const ImageUploadContainer(
+                iconPath: 'assets/icons/Gallery.png',
+                text: 'Gallery',
+              ),
               const SizedBox(
                 height: 10.0,
               ),
-              const PaymentMethodContainer(
-                  iconPath: 'assets/icons/Payoneer_logo.png'),
+              const ImageUploadContainer(
+                iconPath: 'assets/icons/camera.png',
+                text: 'Camera',
+              ),
               const SizedBox(
                 height: 10.0,
               ),
-              const PaymentMethodContainer(iconPath: 'assets/icons/visa.png'),
               const SizedBox(
                 height: 10.0,
               ),
@@ -71,10 +68,10 @@ class _PaymentMethodPageViewState extends State<PaymentMethodPageView> {
         child: CustomButton(
           text: 'Next',
           tap: () {
-            Navigator.pushNamed(
-              context,
-              uploadImageRoute,
-            );
+            // Navigator.pushNamed(
+            //   context,
+            //   PaymentMethodRoute,
+            // );
           },
         ),
       ),
