@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/widgets/back_icon_button.dart';
 import 'package:food_ninja/widgets/custom_button.dart';
 
 import '../../router/routing_constant.dart';
 
 class OBScreenThree extends StatelessWidget {
-  final String argument;
-  const OBScreenThree({Key? key, required this.argument}) : super(key: key);
+  const OBScreenThree({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +44,7 @@ class OBScreenThree extends StatelessWidget {
             ),
             CustomButton(
               tap: () {
-                Navigator.popAndPushNamed(context, SignInRoute);
+                Navigator.pushNamed(context, SignInRoute);
               },
             )
           ],

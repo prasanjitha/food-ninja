@@ -3,6 +3,7 @@ import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_one.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_three.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_two.dart';
+import 'package:food_ninja/views/payment_method_page/payment_method_page_provider.dart';
 import 'package:food_ninja/views/signIn_page/sign_in_page_provider.dart';
 import 'package:food_ninja/views/signup_process_page/signup_process_page_provider.dart';
 
@@ -19,11 +20,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         builder: ((context) => const OBScreenTwo()),
       );
     case OBScreenThreeRoute:
-      var argument = settings.arguments;
       return MaterialPageRoute(
-        builder: ((context) => OBScreenThree(
-              argument: argument.toString(),
-            )),
+        builder: ((context) => const OBScreenThree()),
       );
     case SignInRoute:
       return MaterialPageRoute(
@@ -37,6 +35,11 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: ((context) => SignupProcessPageProvider()),
       );
+    case PaymentMethodRoute:
+      return MaterialPageRoute(
+        builder: ((context) => PaymentMethodPageProvider()),
+      );
+
     default:
       return MaterialPageRoute(
         builder: ((context) => const OBScreenOne()),

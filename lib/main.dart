@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       onGenerateRoute: router.generateRoute,
       theme: CustomThemes.lightTheme(context),
-      // initialRoute: OBScreenOneRoute,
-      home: SignUpPageProvider(),
+      initialRoute: OBScreenOneRoute,
+      // home: SignUpPageProvider(),
     );
   }
 }
