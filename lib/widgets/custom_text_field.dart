@@ -4,7 +4,14 @@ import '../themes/custom_colors.dart';
 
 class CustomTextFormField extends StatefulWidget {
   final String hintText;
-  CustomTextFormField({Key? key, required this.hintText}) : super(key: key);
+  final String prefixIconPath;
+  final bool obscureText;
+  CustomTextFormField({
+    Key? key,
+    required this.hintText,
+    this.prefixIconPath = '',
+    this.obscureText = false,
+  }) : super(key: key);
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
@@ -14,8 +21,11 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      obscureText: false,
+      obscureText: widget.obscureText,
       decoration: InputDecoration(
+        prefixIcon: widget.prefixIconPath.isNotEmpty
+            ? Image.asset(widget.prefixIconPath)
+            : const Text(''),
         counterText: "",
         errorStyle: const TextStyle(fontSize: 0.028),
         hintText: widget.hintText,
