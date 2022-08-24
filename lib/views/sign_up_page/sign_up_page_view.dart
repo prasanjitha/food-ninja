@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/widgets/activate_title.dart';
 
 import '../../themes/custom_colors.dart';
@@ -82,20 +83,33 @@ class _SignUpPageViewState extends State<SignUpPageView> {
                 ),
                 CustomButton(
                   text: 'Create Account',
-                  tap: () {},
+                  tap: () {
+                    Navigator.popAndPushNamed(
+                      context,
+                      SignupProcessRoute,
+                    );
+                  },
                   fontSize: 18.0,
                 ),
                 const SizedBox(
                   height: 20.0,
                 ),
-                Text(
-                  'already have an account?',
-                  style: Theme.of(context).textTheme.headline5!.copyWith(
-                        color: CustomColors.LIGHTGREEN,
-                        decoration: TextDecoration.underline,
-                        decorationColor: CustomColors.DARKGREEN,
-                        decorationThickness: 1,
-                      ),
+                InkWell(
+                  onTap: () {
+                    Navigator.popAndPushNamed(
+                      context,
+                      SignInRoute,
+                    );
+                  },
+                  child: Text(
+                    'already have an account?',
+                    style: Theme.of(context).textTheme.headline5!.copyWith(
+                          color: CustomColors.LIGHTGREEN,
+                          decoration: TextDecoration.underline,
+                          decorationColor: CustomColors.DARKGREEN,
+                          decorationThickness: 1,
+                        ),
+                  ),
                 ),
               ],
             ),

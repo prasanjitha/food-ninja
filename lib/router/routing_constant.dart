@@ -5,3 +5,4 @@ const String OBScreenTwoRoute = 'obScreenTwo';
 const String OBScreenThreeRoute = 'obScreenThree';
 const String SignInRoute = 'signIn';
 const String SignUpRoute = 'signUp';
+const String SignupProcessRoute = 'signupProcess';
