@@ -8,3 +8,4 @@ const String SignUpRoute = 'signUp';
 const String SignupProcessRoute = 'signupProcess';
 const String PaymentMethodRoute = 'paymentMethod';
 const String backScreenRoute = 'backScreen';
+const String uploadImageRoute = 'uploadImage';

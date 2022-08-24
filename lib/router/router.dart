@@ -6,6 +6,7 @@ import 'package:food_ninja/views/onboarding_screens/onboarding_screen_two.dart';
 import 'package:food_ninja/views/payment_method_page/payment_method_page_provider.dart';
 import 'package:food_ninja/views/signIn_page/sign_in_page_provider.dart';
 import 'package:food_ninja/views/signup_process_page/signup_process_page_provider.dart';
+import 'package:food_ninja/views/upload_image_page/upload_image_page_provider.dart';
 
 import '../views/sign_up_page/sign_up_page_provider.dart';
 
@@ -38,6 +39,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case PaymentMethodRoute:
       return MaterialPageRoute(
         builder: ((context) => PaymentMethodPageProvider()),
+      );
+    case uploadImageRoute:
+      return MaterialPageRoute(
+        builder: ((context) => UploadImagePageProvider()),
       );
 
     default:
