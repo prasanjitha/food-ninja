@@ -10,3 +10,4 @@ const String PaymentMethodRoute = 'paymentMethod';
 const String backScreenRoute = 'backScreen';
 const String uploadImageRoute = 'uploadImage';
 const String ImagePreviewRoute = 'imagePreview';
+const String SetLocationRoute = 'setLocation';
