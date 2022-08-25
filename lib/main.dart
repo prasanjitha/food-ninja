@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_ninja/router/routing_constant.dart';
+import 'package:food_ninja/views/main_home_page/main_home_page_provider.dart';
 import 'router/router.dart' as router;
 import 'themes/custom_themes.dart';
 import 'views/onboarding_screens/onboarding_screen_one.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: router.generateRoute,
       theme: CustomThemes.lightTheme(context),
       // initialRoute: OBScreenOneRoute,
-      home: ResetPasswordPageProvider(),
+      home: MainHomePageProvider(),
     );
   }
 }

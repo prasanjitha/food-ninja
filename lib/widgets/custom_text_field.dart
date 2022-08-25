@@ -8,6 +8,7 @@ class CustomTextFormField extends StatefulWidget {
   final bool obscureText;
   final void Function(String)? onChange;
   final TextEditingController? controller;
+  final Color fillColor;
 
   CustomTextFormField({
     Key? key,
@@ -16,6 +17,7 @@ class CustomTextFormField extends StatefulWidget {
     this.obscureText = false,
     this.onChange,
     this.controller,
+    this.fillColor = CustomColors.BACKGROUND,
   }) : super(key: key);
 
   @override
@@ -40,7 +42,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         contentPadding: const EdgeInsets.fromLTRB(20, 28, 0, 0),
         hintStyle: Theme.of(context).textTheme.subtitle1,
         filled: true,
-        fillColor: Colors.white,
+        fillColor: widget.fillColor,
         border: const OutlineInputBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(10.0),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/views/image_preview_page/image_preview_page_provider.dart';
+import 'package:food_ninja/views/main_home_page/main_home_page_provider.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_one.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_three.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_two.dart';
@@ -74,6 +75,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case SuccessNotificationRoute:
       return MaterialPageRoute(
         builder: ((context) => const SuccessNotificationScreen()),
+      );
+    case MainHomePageRoute:
+      return MaterialPageRoute(
+        builder: ((context) => MainHomePageProvider()),
       );
     default:
       return MaterialPageRoute(

@@ -46,10 +46,10 @@ class _SuccessNotificationScreenState extends State<SuccessNotificationScreen> {
         child: CustomButton(
           text: 'Back',
           tap: () {
-            // Navigator.pushNamed(
-            //   context,
-            //   VIaMethodRoute,
-            // );
+            Navigator.pushNamed(
+              context,
+              MainHomePageRoute,
+            );
           },
         ),
       ),
