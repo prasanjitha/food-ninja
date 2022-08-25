@@ -11,3 +11,5 @@ const String backScreenRoute = 'backScreen';
 const String uploadImageRoute = 'uploadImage';
 const String ImagePreviewRoute = 'imagePreview';
 const String SetLocationRoute = 'setLocation';
+const String SignupSuccessRoute = 'signupSuccess';
+const String VIaMethodRoute = 'viaMethod';
