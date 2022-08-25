@@ -15,3 +15,4 @@ const String SignupSuccessRoute = 'signupSuccess';
 const String VIaMethodRoute = 'viaMethod';
 const String ResetPasswordRoute = 'resetPassword';
 const String SuccessNotificationRoute = 'successNotification';
+const String MainHomePageRoute = 'mainHome';

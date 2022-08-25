@@ -14,7 +14,9 @@ abstract class CustomColors {
   static const Color SCAFFOLD = Color(0xFFF9F9F9);
   static const Color LIGHTGREEN = Color(0xFF53E88B);
   static const Color DARKGREEN = Color(0xFF15BE77);
-  static const Color LIGHTGREY = Color(0xFFF6F6F6);
+  static const Color ORANGE = Color(0xFFFF7C32);
+  static const Color LIGHTGREY = Color.fromARGB(255, 255, 253, 252);
+  static const Color LIGHTPINK = Color.fromARGB(255, 247, 240, 231);
   static const Color BLUE = Color.fromARGB(255, 45, 12, 226);
 
   static Color darker(Color c) {
