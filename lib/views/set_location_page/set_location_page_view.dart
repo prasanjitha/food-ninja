@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/router/routing_constant.dart';
 
 import '../../themes/custom_colors.dart';
 import '../../widgets/back_icon_button.dart';
@@ -106,10 +107,10 @@ class _SetLocationPageViewState extends State<SetLocationPageView> {
         child: CustomButton(
           text: 'Next',
           tap: () {
-            // Navigator.pushNamed(
-            //   context,
-            //   SetLocationRoute,
-            // );
+            Navigator.pushNamed(
+              context,
+              SignupSuccessRoute,
+            );
           },
         ),
       ),

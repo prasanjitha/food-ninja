@@ -14,7 +14,7 @@ class OBScreenOne extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(
-              height: 200.0,
+              height: 180.0,
             ),
             Image.asset(
               'assets/images/Logo.png',
@@ -35,13 +35,16 @@ class OBScreenOne extends StatelessWidget {
             const SizedBox(
               height: 40.0,
             ),
-            CustomButton(
-              tap: () {
-                Navigator.of(context).pushNamed(OBScreenTwoRoute);
-                // Navigator.popAndPushNamed(context, OBScreenTwoRoute);
-              },
-            )
           ],
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 80.0, vertical: 20.0),
+        child: CustomButton(
+          text: 'Next',
+          tap: () {
+            Navigator.of(context).pushNamed(OBScreenTwoRoute);
+          },
         ),
       ),
       // body: Stack(

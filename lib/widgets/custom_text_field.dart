@@ -6,11 +6,16 @@ class CustomTextFormField extends StatefulWidget {
   final String hintText;
   final String prefixIconPath;
   final bool obscureText;
+  final void Function(String)? onChange;
+  final TextEditingController? controller;
+
   CustomTextFormField({
     Key? key,
     required this.hintText,
     this.prefixIconPath = '',
     this.obscureText = false,
+    this.onChange,
+    this.controller,
   }) : super(key: key);
 
   @override
@@ -22,6 +27,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   Widget build(BuildContext context) {
     return TextFormField(
       obscureText: widget.obscureText,
+      onChanged: widget.onChange,
+      controller: widget.controller,
       decoration: InputDecoration(
         prefixIcon: widget.prefixIconPath.isNotEmpty
             ? Image.asset(widget.prefixIconPath)
