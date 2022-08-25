@@ -13,3 +13,5 @@ const String ImagePreviewRoute = 'imagePreview';
 const String SetLocationRoute = 'setLocation';
 const String SignupSuccessRoute = 'signupSuccess';
 const String VIaMethodRoute = 'viaMethod';
+const String ResetPasswordRoute = 'resetPassword';
+const String SuccessNotificationRoute = 'successNotification';
