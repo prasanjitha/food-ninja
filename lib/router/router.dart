@@ -17,6 +17,8 @@ import 'package:food_ninja/views/onboarding_screens/onboarding_screen_three.dart
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_two.dart';
 import 'package:food_ninja/views/onboarding_screens/success_notification_screen.dart';
 import 'package:food_ninja/views/payment_method_page/payment_method_page_provider.dart';
+import 'package:food_ninja/views/rate_food_page/rate_food_page_provider.dart';
+import 'package:food_ninja/views/rate_resturant_page/rate_resturant_page_provider.dart';
 import 'package:food_ninja/views/reset_password_page/reset_password_page_provider.dart';
 import 'package:food_ninja/views/set_location_page/set_location_page_provider.dart';
 import 'package:food_ninja/views/signIn_page/sign_in_page_provider.dart';
@@ -129,6 +131,14 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case FinishOrderRoute:
       return MaterialPageRoute(
         builder: ((context) => FinishOrderPageProvider()),
+      );
+    case RateFoodRoute:
+      return MaterialPageRoute(
+        builder: ((context) => RateFoodPageProvider()),
+      );
+    case RateResturatRoute:
+      return MaterialPageRoute(
+        builder: ((context) => RateResturantPageProvider()),
       );
     default:
       return MaterialPageRoute(
