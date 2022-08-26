@@ -30,3 +30,4 @@ const String FinishOrderRoute = 'finishOrder';
 const String RateFoodRoute = 'rateFood';
 const String RateResturatRoute = 'rateResturat';
 const String VoucharPromoRoute = 'voucharPromo';
+const String notificationRoute = 'notification';

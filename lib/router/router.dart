@@ -12,6 +12,7 @@ import 'package:food_ninja/views/image_preview_page/image_preview_page_provider.
 import 'package:food_ninja/views/main_home_page/main_home_page_provider.dart';
 import 'package:food_ninja/views/message_details_screen/message_detail_page_provider.dart';
 import 'package:food_ninja/views/message_screen/message_page_provider.dart';
+import 'package:food_ninja/views/notification_page/notification_page_provider.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_one.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_three.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_two.dart';
@@ -144,6 +145,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case VoucharPromoRoute:
       return MaterialPageRoute(
         builder: ((context) => VoucharPromoPageProvider()),
+      );
+    case notificationRoute:
+      return MaterialPageRoute(
+        builder: ((context) => NotificationPageProvider()),
       );
     default:
       return MaterialPageRoute(
