@@ -27,6 +27,7 @@ import 'package:food_ninja/views/signup_success_page/signup_success_page_provide
 import 'package:food_ninja/views/upload_image_page/upload_image_page_provider.dart';
 import 'package:food_ninja/views/via_method_page/via_method_page_bloc.dart';
 import 'package:food_ninja/views/via_method_page/via_method_page_provider.dart';
+import 'package:food_ninja/views/vouchar_promo_page/vouchar_promo_page_provider.dart';
 
 import '../views/sign_up_page/sign_up_page_provider.dart';
 
@@ -139,6 +140,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case RateResturatRoute:
       return MaterialPageRoute(
         builder: ((context) => RateResturantPageProvider()),
+      );
+    case VoucharPromoRoute:
+      return MaterialPageRoute(
+        builder: ((context) => VoucharPromoPageProvider()),
       );
     default:
       return MaterialPageRoute(
