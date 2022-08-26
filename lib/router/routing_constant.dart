@@ -18,3 +18,7 @@ const String SuccessNotificationRoute = 'successNotification';
 const String MainHomePageRoute = 'mainHome';
 const String ExploreRestturantPageRoute = 'exploreResturant';
 const String FilterRoute = 'filter';
+const String ExploreMenuRoute = 'exploreMenu';
+const String ExploreRestturantWithFilterPageRoute =
+    'exploreResturantWithFilter';
+const String ExploreMenuWithFilterRoute = 'exploreMenuWithFilter';

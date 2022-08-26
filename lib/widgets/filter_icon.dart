@@ -4,7 +4,12 @@ import '../themes/custom_colors.dart';
 
 class FilterIcon extends StatelessWidget {
   final String title;
-  const FilterIcon({Key? key, required this.title}) : super(key: key);
+  final bool iconClose;
+  const FilterIcon({
+    Key? key,
+    required this.title,
+    this.iconClose = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +20,29 @@ class FilterIcon extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Center(
-          child: Text(
-            title,
-            style: Theme.of(context)
-                .textTheme
-                .headline4!
-                .copyWith(color: CustomColors.BROWN),
+          child: Row(
+            children: [
+              Text(
+                title,
+                style: Theme.of(context)
+                    .textTheme
+                    .headline4!
+                    .copyWith(color: CustomColors.BROWN),
+              ),
+              iconClose
+                  ? Row(
+                      children: const [
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        Icon(
+                          Icons.close,
+                          color: CustomColors.ORANGE,
+                        )
+                      ],
+                    )
+                  : Row(),
+            ],
           ),
         ),
       ),

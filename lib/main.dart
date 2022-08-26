@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_ninja/router/routing_constant.dart';
+import 'package:food_ninja/views/explore_menu_page/explore_menu_page_bloc.dart';
+import 'package:food_ninja/views/explore_menu_page/explore_menu_page_provider.dart';
 import 'package:food_ninja/views/main_home_page/main_home_page_provider.dart';
 import 'router/router.dart' as router;
 import 'themes/custom_themes.dart';
+import 'views/explore_menu_with_filter_page/explore_menu_with_filter_page_provider.dart';
 import 'views/explore_resturant_page/explore_resturant_page_view.dart';
+import 'views/explore_resturant_page_with_filter/explore_resturant_with_filter_page_provider.dart';
 import 'views/onboarding_screens/onboarding_screen_one.dart';
 import 'views/onboarding_screens/onboarding_screen_three.dart';
 import 'views/onboarding_screens/onboarding_screen_two.dart';
@@ -39,7 +43,7 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: router.generateRoute,
         theme: CustomThemes.lightTheme(context),
         // initialRoute: OBScreenOneRoute,
-        home: ExploreResturantPageView(),
+        home: ExploreMenuWithFilterPageProvider(),
       ),
     );
   }

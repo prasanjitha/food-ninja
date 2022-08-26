@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:food_ninja/router/routing_constant.dart';
+import 'package:food_ninja/views/explore_menu_page/explore_menu_page_provider.dart';
+import 'package:food_ninja/views/explore_menu_with_filter_page/explore_menu_with_filter_page_provider.dart';
 import 'package:food_ninja/views/explore_resturant_page/explore_resturant_page_provider.dart';
+import 'package:food_ninja/views/explore_resturant_page_with_filter/explore_resturant_with_filter_page_provider.dart';
 import 'package:food_ninja/views/filter_page/filter_page_provider.dart';
 import 'package:food_ninja/views/image_preview_page/image_preview_page_provider.dart';
 import 'package:food_ninja/views/main_home_page/main_home_page_provider.dart';
@@ -89,6 +92,18 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case FilterRoute:
       return MaterialPageRoute(
         builder: ((context) => FilterPageProvider()),
+      );
+    case ExploreMenuRoute:
+      return MaterialPageRoute(
+        builder: ((context) => ExploreMenuPageProvider()),
+      );
+    case ExploreRestturantWithFilterPageRoute:
+      return MaterialPageRoute(
+        builder: ((context) => ExploreResturantWithFilterPageProvider()),
+      );
+    case ExploreMenuWithFilterRoute:
+      return MaterialPageRoute(
+        builder: ((context) => ExploreMenuWithFilterPageProvider()),
       );
     default:
       return MaterialPageRoute(
