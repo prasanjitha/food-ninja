@@ -6,19 +6,21 @@ class CustomButton extends StatelessWidget {
   final VoidCallback tap;
   final String text;
   final double fontSize;
-  const CustomButton({
-    Key? key,
-    required this.tap,
-    this.text = 'Next',
-    this.fontSize = 24.0,
-  }) : super(key: key);
+  final double width;
+  const CustomButton(
+      {Key? key,
+      required this.tap,
+      this.text = 'Next',
+      this.fontSize = 24.0,
+      this.width = 160.0})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: tap,
       child: Container(
-        width: 160.0,
+        width: width,
         height: 60.0,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.0),

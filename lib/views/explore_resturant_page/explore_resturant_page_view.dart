@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
 import 'package:food_ninja/widgets/nearest_resturant_item.dart';
 
@@ -65,7 +66,14 @@ class _ExploreResturantPageViewState extends State<ExploreResturantPageView> {
                   const SizedBox(
                     width: 10.0,
                   ),
-                  Image.asset('assets/home/FilterIcon.png'),
+                  InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          FilterRoute,
+                        );
+                      },
+                      child: Image.asset('assets/home/FilterIcon.png')),
                 ],
               ),
               const SizedBox(

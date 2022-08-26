@@ -17,3 +17,4 @@ const String ResetPasswordRoute = 'resetPassword';
 const String SuccessNotificationRoute = 'successNotification';
 const String MainHomePageRoute = 'mainHome';
 const String ExploreRestturantPageRoute = 'exploreResturant';
+const String FilterRoute = 'filter';
