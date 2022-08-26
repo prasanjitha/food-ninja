@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:food_ninja/router/routing_constant.dart';
+import 'package:food_ninja/views/call_ringing_page/call_ringing_page_provider.dart';
+import 'package:food_ninja/views/calling_page/calling_page_provider.dart';
+import 'package:food_ninja/views/explore_menu_page/explore_menu_page_provider.dart';
+import 'package:food_ninja/views/explore_menu_with_filter_page/explore_menu_with_filter_page_provider.dart';
 import 'package:food_ninja/views/explore_resturant_page/explore_resturant_page_provider.dart';
+import 'package:food_ninja/views/explore_resturant_page_with_filter/explore_resturant_with_filter_page_provider.dart';
 import 'package:food_ninja/views/filter_page/filter_page_provider.dart';
+import 'package:food_ninja/views/finish_order_page/finish_order_page_provider.dart';
 import 'package:food_ninja/views/image_preview_page/image_preview_page_provider.dart';
 import 'package:food_ninja/views/main_home_page/main_home_page_provider.dart';
+import 'package:food_ninja/views/message_details_screen/message_detail_page_provider.dart';
+import 'package:food_ninja/views/message_screen/message_page_provider.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_one.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_three.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_two.dart';
@@ -89,6 +97,38 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case FilterRoute:
       return MaterialPageRoute(
         builder: ((context) => FilterPageProvider()),
+      );
+    case ExploreMenuRoute:
+      return MaterialPageRoute(
+        builder: ((context) => ExploreMenuPageProvider()),
+      );
+    case ExploreRestturantWithFilterPageRoute:
+      return MaterialPageRoute(
+        builder: ((context) => ExploreResturantWithFilterPageProvider()),
+      );
+    case ExploreMenuWithFilterRoute:
+      return MaterialPageRoute(
+        builder: ((context) => ExploreMenuWithFilterPageProvider()),
+      );
+    case MessageRoute:
+      return MaterialPageRoute(
+        builder: ((context) => MessagePageProvider()),
+      );
+    case MessageDetailsRoute:
+      return MaterialPageRoute(
+        builder: ((context) => MessageDetailsPageProvider()),
+      );
+    case CallRingingRoute:
+      return MaterialPageRoute(
+        builder: ((context) => CallRIngingPageProvider()),
+      );
+    case CallingRoute:
+      return MaterialPageRoute(
+        builder: ((context) => CallingPageProvider()),
+      );
+    case FinishOrderRoute:
+      return MaterialPageRoute(
+        builder: ((context) => FinishOrderPageProvider()),
       );
     default:
       return MaterialPageRoute(
