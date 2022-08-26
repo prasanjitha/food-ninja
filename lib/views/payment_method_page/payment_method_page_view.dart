@@ -1,7 +1,11 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_ninja/router/routing_constant.dart';
+import 'package:food_ninja/views/payment_method_page/payment_method_page_event.dart';
+import 'package:food_ninja/views/payment_method_page/payment_method_page_state.dart';
+import 'package:food_ninja/views/signup_process_page/signup_process_page_state.dart';
 import 'package:food_ninja/widgets/payment_method_container.dart';
 
 import '../../themes/custom_colors.dart';
@@ -9,6 +13,8 @@ import '../../widgets/activate_title.dart';
 import '../../widgets/back_icon_button.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text_field.dart';
+import '../signup_process_page/signup_process_page_bloc.dart';
+import 'payment_method_page_bloc.dart';
 
 class PaymentMethodPageView extends StatefulWidget {
   const PaymentMethodPageView({Key? key}) : super(key: key);
@@ -20,6 +26,8 @@ class PaymentMethodPageView extends StatefulWidget {
 class _PaymentMethodPageViewState extends State<PaymentMethodPageView> {
   @override
   Widget build(BuildContext context) {
+    PaymentMethodPageBloc bloc =
+        BlocProvider.of<PaymentMethodPageBloc>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -49,18 +57,47 @@ class _PaymentMethodPageViewState extends State<PaymentMethodPageView> {
               const SizedBox(
                 height: 40.0,
               ),
-              const PaymentMethodContainer(iconPath: 'assets/icons/paypal.png'),
+              PaymentMethodContainer(
+                  tap: () {
+                    bloc.add(ChoosePaymentMethod(method: 'paypal'));
+                  },
+                  iconPath: 'assets/icons/paypal.png'),
               const SizedBox(
                 height: 10.0,
               ),
-              const PaymentMethodContainer(
+              PaymentMethodContainer(
+                  tap: () {
+                    bloc.add(ChoosePaymentMethod(method: 'payoneer'));
+                  },
                   iconPath: 'assets/icons/Payoneer_logo.png'),
               const SizedBox(
                 height: 10.0,
               ),
-              const PaymentMethodContainer(iconPath: 'assets/icons/visa.png'),
+              PaymentMethodContainer(
+                  tap: () {
+                    bloc.add(ChoosePaymentMethod(method: 'visa'));
+                  },
+                  iconPath: 'assets/icons/visa.png'),
               const SizedBox(
                 height: 10.0,
+              ),
+              BlocBuilder<PaymentMethodPageBloc, PaymentMethodPageState>(
+                buildWhen: (previous, current) =>
+                    previous.isLoading != current.isLoading,
+                builder: (context, state) {
+                  return Column(
+                    children: [
+                      Text(
+                        state.error,
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
+                      Text(
+                        state.paymentMethod,
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
+                    ],
+                  );
+                },
               ),
             ],
           ),

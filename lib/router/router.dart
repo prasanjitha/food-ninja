@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_ninja/router/routing_constant.dart';
+import 'package:food_ninja/views/explore_resturant_page/explore_resturant_page_provider.dart';
 import 'package:food_ninja/views/image_preview_page/image_preview_page_provider.dart';
 import 'package:food_ninja/views/main_home_page/main_home_page_provider.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_one.dart';
@@ -79,6 +80,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case MainHomePageRoute:
       return MaterialPageRoute(
         builder: ((context) => MainHomePageProvider()),
+      );
+    case ExploreRestturantPageRoute:
+      return MaterialPageRoute(
+        builder: ((context) => ExploreResturantPageProvider()),
       );
     default:
       return MaterialPageRoute(

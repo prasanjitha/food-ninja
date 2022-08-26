@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
 import 'package:food_ninja/widgets/nearest_resturant_item.dart';
 
 import '../../widgets/custom_text_field.dart';
 
-class MainHomePageView extends StatefulWidget {
-  const MainHomePageView({Key? key}) : super(key: key);
+class ExploreResturantPageView extends StatefulWidget {
+  const ExploreResturantPageView({Key? key}) : super(key: key);
 
   @override
-  _MainHomePageViewState createState() => _MainHomePageViewState();
+  _ExploreResturantPageViewState createState() =>
+      _ExploreResturantPageViewState();
 }
 
-class _MainHomePageViewState extends State<MainHomePageView> {
+class _ExploreResturantPageViewState extends State<ExploreResturantPageView> {
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
@@ -21,6 +21,7 @@ class _MainHomePageViewState extends State<MainHomePageView> {
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(
                 height: 40.0,
@@ -70,38 +71,9 @@ class _MainHomePageViewState extends State<MainHomePageView> {
               const SizedBox(
                 height: 20.0,
               ),
-              Image.asset(
-                'assets/home/PromoAdvertising.png',
-                width: width,
-                height: 150.0,
-                fit: BoxFit.cover,
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Nearest Restaurant',
-                    style: Theme.of(context).textTheme.headline4,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.pushNamed(
-                        context,
-                        ExploreRestturantPageRoute,
-                      );
-                    },
-                    child: Text(
-                      'view more',
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline4!
-                          .copyWith(color: CustomColors.ORANGE),
-                    ),
-                  ),
-                ],
+              Text(
+                'Nearest Restaurant',
+                style: Theme.of(context).textTheme.headline3,
               ),
               const SizedBox(
                 height: 20.0,
@@ -115,7 +87,7 @@ class _MainHomePageViewState extends State<MainHomePageView> {
                   ),
                   NearestResturantItem(
                     imagePath: 'assets/home/RestaurantImage.png',
-                    title: 'Vegan Resto',
+                    title: 'Health Food',
                   ),
                 ],
               ),
@@ -124,60 +96,32 @@ class _MainHomePageViewState extends State<MainHomePageView> {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Popular Menu',
-                    style: Theme.of(context).textTheme.headline4,
+                children: const [
+                  NearestResturantItem(
+                    imagePath: 'assets/home/RestaurantImage1.png',
+                    title: 'Good Food',
                   ),
-                  Text(
-                    'view more',
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline4!
-                        .copyWith(color: CustomColors.ORANGE),
+                  NearestResturantItem(
+                    imagePath: 'assets/home/RestaurantImage2.png',
+                    title: 'Smart Resto',
                   ),
                 ],
               ),
               const SizedBox(
                 height: 20.0,
               ),
-              Container(
-                width: width,
-                height: 90.0,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15.0),
-                    border: Border.all(color: CustomColors.ONSURFACE)),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 20.0, vertical: 10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Image.asset('assets/home/PhotoMenu.png'),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Green Noddle',
-                            style: Theme.of(context).textTheme.headline4,
-                          ),
-                          const SizedBox(
-                            height: 10.0,
-                          ),
-                          Text(
-                            'Noddle Home',
-                            style:
-                                Theme.of(context).textTheme.headline4!.copyWith(
-                                      color: CustomColors.PRIMARY_VARIANT,
-                                    ),
-                          ),
-                        ],
-                      ),
-                      Image.asset('assets/home/Price.png'),
-                    ],
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  NearestResturantItem(
+                    imagePath: 'assets/home/RestaurantImage3.png',
+                    title: 'Vegan Resto',
                   ),
-                ),
+                  NearestResturantItem(
+                    imagePath: 'assets/home/RestaurantImage4.png',
+                    title: 'Vegan Resto',
+                  ),
+                ],
               ),
             ],
           ),

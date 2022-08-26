@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/views/main_home_page/main_home_page_provider.dart';
 import 'router/router.dart' as router;
 import 'themes/custom_themes.dart';
+import 'views/explore_resturant_page/explore_resturant_page_view.dart';
 import 'views/onboarding_screens/onboarding_screen_one.dart';
 import 'views/onboarding_screens/onboarding_screen_three.dart';
 import 'views/onboarding_screens/onboarding_screen_two.dart';
+import 'views/payment_method_page/payment_method_page_bloc.dart';
 import 'views/reset_password_page/reset_password_page_provider.dart';
 import 'views/signIn_page/sign_in_page_provider.dart';
 import 'views/sign_up_page/sign_up_page_provider.dart';
+import 'views/signup_process_page/signup_process_page_bloc.dart';
+import 'views/signup_process_page/signup_process_page_provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,12 +25,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      onGenerateRoute: router.generateRoute,
-      theme: CustomThemes.lightTheme(context),
-      // initialRoute: OBScreenOneRoute,
-      home: MainHomePageProvider(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => SignupProcessPageBloc(context),
+        ),
+        BlocProvider(
+          create: (context) => PaymentMethodPageBloc(context),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        onGenerateRoute: router.generateRoute,
+        theme: CustomThemes.lightTheme(context),
+        // initialRoute: OBScreenOneRoute,
+        home: ExploreResturantPageView(),
+      ),
     );
   }
 }
