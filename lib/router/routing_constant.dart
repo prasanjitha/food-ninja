@@ -23,3 +23,7 @@ const String ExploreRestturantWithFilterPageRoute =
     'exploreResturantWithFilter';
 const String ExploreMenuWithFilterRoute = 'exploreMenuWithFilter';
 const String MessageRoute = 'message';
+const String MessageDetailsRoute = 'messageDetails';
+const String CallRingingRoute = 'callRinging';
+const String CallingRoute = 'calling';
+const String FinishOrderRoute = 'finishOrder';

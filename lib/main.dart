@@ -7,9 +7,12 @@ import 'package:food_ninja/views/main_home_page/main_home_page_provider.dart';
 import 'package:food_ninja/views/message_screen/message_page_provider.dart';
 import 'router/router.dart' as router;
 import 'themes/custom_themes.dart';
+import 'views/call_ringing_page/call_ringing_page_provider.dart';
 import 'views/explore_menu_with_filter_page/explore_menu_with_filter_page_provider.dart';
 import 'views/explore_resturant_page/explore_resturant_page_view.dart';
 import 'views/explore_resturant_page_with_filter/explore_resturant_with_filter_page_provider.dart';
+import 'views/finish_order_page/finish_order_page_provider.dart';
+import 'views/message_details_screen/message_detail_page_provider.dart';
 import 'views/onboarding_screens/onboarding_screen_one.dart';
 import 'views/onboarding_screens/onboarding_screen_three.dart';
 import 'views/onboarding_screens/onboarding_screen_two.dart';
@@ -44,7 +47,7 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: router.generateRoute,
         theme: CustomThemes.lightTheme(context),
         // initialRoute: OBScreenOneRoute,
-        home: MessagePageProvider(),
+        home: FinishOrderPageProvider(),
       ),
     );
   }
