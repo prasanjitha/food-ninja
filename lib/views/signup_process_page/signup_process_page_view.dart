@@ -1,10 +1,15 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_ninja/router/routing_constant.dart';
+import 'package:food_ninja/views/payment_method_page/payment_method_page_event.dart';
+import 'package:food_ninja/views/signup_process_page/signup_process_page_event.dart';
 import 'package:food_ninja/widgets/back_icon_button.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text_field.dart';
+import '../payment_method_page/payment_method_page_bloc.dart';
+import 'signup_process_page_bloc.dart';
 
 class SignupProcessPageView extends StatefulWidget {
   const SignupProcessPageView({Key? key}) : super(key: key);
@@ -14,8 +19,15 @@ class SignupProcessPageView extends StatefulWidget {
 }
 
 class _SignupProcessPageViewState extends State<SignupProcessPageView> {
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
+  TextEditingController mobileController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    SignupProcessPageBloc bloc =
+        BlocProvider.of<SignupProcessPageBloc>(context);
+    PaymentMethodPageBloc blocPayment =
+        BlocProvider.of<PaymentMethodPageBloc>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Center(
@@ -46,15 +58,18 @@ class _SignupProcessPageViewState extends State<SignupProcessPageView> {
                 const SizedBox(
                   height: 40.0,
                 ),
-                CustomTextFormField(hintText: 'First Name'),
+                CustomTextFormField(
+                    controller: firstNameController, hintText: 'First Name'),
                 const SizedBox(
                   height: 10.0,
                 ),
-                CustomTextFormField(hintText: 'Last Name'),
+                CustomTextFormField(
+                    controller: lastNameController, hintText: 'Last Name'),
                 const SizedBox(
                   height: 10.0,
                 ),
-                CustomTextFormField(hintText: 'Mobile Number'),
+                CustomTextFormField(
+                    controller: mobileController, hintText: 'Mobile Number'),
                 const SizedBox(
                   height: 10.0,
                 ),
@@ -68,6 +83,15 @@ class _SignupProcessPageViewState extends State<SignupProcessPageView> {
         child: CustomButton(
           text: 'Next',
           tap: () {
+            blocPayment
+                .add(NamePaymentMethod(name: firstNameController.text.trim()));
+            bloc.add(
+              GetUserInputEvent(
+                fistName: firstNameController.text.trim(),
+                lastName: lastNameController.text.trim(),
+                mobile: mobileController.text.trim(),
+              ),
+            );
             Navigator.pushNamed(
               context,
               PaymentMethodRoute,

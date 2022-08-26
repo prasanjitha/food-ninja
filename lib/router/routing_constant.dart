@@ -16,3 +16,4 @@ const String VIaMethodRoute = 'viaMethod';
 const String ResetPasswordRoute = 'resetPassword';
 const String SuccessNotificationRoute = 'successNotification';
 const String MainHomePageRoute = 'mainHome';
+const String ExploreRestturantPageRoute = 'exploreResturant';
