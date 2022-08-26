@@ -7,6 +7,7 @@ import 'package:food_ninja/views/explore_resturant_page_with_filter/explore_rest
 import 'package:food_ninja/views/filter_page/filter_page_provider.dart';
 import 'package:food_ninja/views/image_preview_page/image_preview_page_provider.dart';
 import 'package:food_ninja/views/main_home_page/main_home_page_provider.dart';
+import 'package:food_ninja/views/message_screen/message_page_provider.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_one.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_three.dart';
 import 'package:food_ninja/views/onboarding_screens/onboarding_screen_two.dart';
@@ -104,6 +105,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case ExploreMenuWithFilterRoute:
       return MaterialPageRoute(
         builder: ((context) => ExploreMenuWithFilterPageProvider()),
+      );
+    case MessageRoute:
+      return MaterialPageRoute(
+        builder: ((context) => MessagePageProvider()),
       );
     default:
       return MaterialPageRoute(

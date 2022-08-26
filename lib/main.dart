@@ -4,6 +4,7 @@ import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/views/explore_menu_page/explore_menu_page_bloc.dart';
 import 'package:food_ninja/views/explore_menu_page/explore_menu_page_provider.dart';
 import 'package:food_ninja/views/main_home_page/main_home_page_provider.dart';
+import 'package:food_ninja/views/message_screen/message_page_provider.dart';
 import 'router/router.dart' as router;
 import 'themes/custom_themes.dart';
 import 'views/explore_menu_with_filter_page/explore_menu_with_filter_page_provider.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: router.generateRoute,
         theme: CustomThemes.lightTheme(context),
         // initialRoute: OBScreenOneRoute,
-        home: ExploreMenuWithFilterPageProvider(),
+        home: MessagePageProvider(),
       ),
     );
   }

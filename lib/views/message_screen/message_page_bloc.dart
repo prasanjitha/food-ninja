@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'home_page_event.dart';
-import 'home_page_state.dart';
+import 'message_page_event.dart';
+import 'message_page_state.dart';
 
-class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
-  HomePageBloc(BuildContext context) : super(HomePageState.initialState);
+class MessagePageBloc extends Bloc<MessagePageEvent, MessagePageState> {
+  MessagePageBloc(BuildContext context) : super(MessagePageState.initialState);
 }

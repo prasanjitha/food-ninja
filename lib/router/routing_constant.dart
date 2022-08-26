@@ -22,3 +22,4 @@ const String ExploreMenuRoute = 'exploreMenu';
 const String ExploreRestturantWithFilterPageRoute =
     'exploreResturantWithFilter';
 const String ExploreMenuWithFilterRoute = 'exploreMenuWithFilter';
+const String MessageRoute = 'message';
