@@ -27,3 +27,5 @@ const String MessageDetailsRoute = 'messageDetails';
 const String CallRingingRoute = 'callRinging';
 const String CallingRoute = 'calling';
 const String FinishOrderRoute = 'finishOrder';
+const String RateFoodRoute = 'rateFood';
+const String RateResturatRoute = 'rateResturat';
