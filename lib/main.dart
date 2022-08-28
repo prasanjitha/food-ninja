@@ -25,8 +25,11 @@ import 'views/sign_up_page/sign_up_page_provider.dart';
 import 'views/signup_process_page/signup_process_page_bloc.dart';
 import 'views/signup_process_page/signup_process_page_provider.dart';
 import 'views/vouchar_promo_page/vouchar_promo_page_provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -50,7 +53,7 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: router.generateRoute,
         theme: CustomThemes.lightTheme(context),
         // initialRoute: OBScreenOneRoute,
-        home: NotificationPageProvider(),
+        home: SignupProcessPageProvider(),
       ),
     );
   }

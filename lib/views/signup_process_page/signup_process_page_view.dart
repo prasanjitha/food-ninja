@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/views/payment_method_page/payment_method_page_event.dart';
 import 'package:food_ninja/views/signup_process_page/signup_process_page_event.dart';
+import 'package:food_ninja/views/signup_process_page/signup_process_page_state.dart';
 import 'package:food_ninja/widgets/back_icon_button.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text_field.dart';
@@ -73,6 +74,30 @@ class _SignupProcessPageViewState extends State<SignupProcessPageView> {
                 const SizedBox(
                   height: 10.0,
                 ),
+                BlocBuilder<SignupProcessPageBloc, SignupProcessPageState>(
+                  builder: (context, state) {
+                    if (state.isLoading) {
+                      return const Center(
+                        child: CircularProgressIndicator.adaptive(),
+                      );
+                    }
+                    return SizedBox(
+                      height: 200.0,
+                      width: 300,
+                      child: ListView.builder(
+                        itemCount: state.users.length,
+                        itemBuilder: (context, index) {
+                          return Row(
+                            children: [
+                              Text(state.users[index].firstName),
+                              Text(state.users[index].lastName),
+                            ],
+                          );
+                        },
+                      ),
+                    );
+                  },
+                )
               ],
             ),
           ),
@@ -92,10 +117,10 @@ class _SignupProcessPageViewState extends State<SignupProcessPageView> {
                 mobile: mobileController.text.trim(),
               ),
             );
-            Navigator.pushNamed(
-              context,
-              PaymentMethodRoute,
-            );
+            // Navigator.pushNamed(
+            //   context,
+            //   PaymentMethodRoute,
+            // );
           },
         ),
       ),
