@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_ninja/bloc_example_pages/api_call/post_page_provider.dart';
+import 'package:food_ninja/bloc_example_pages/get_user_input/task_details_page/task_details_page_bloc.dart';
 import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/views/explore_menu_page/explore_menu_page_bloc.dart';
 import 'package:food_ninja/views/explore_menu_page/explore_menu_page_provider.dart';
 import 'package:food_ninja/views/main_home_page/main_home_page_provider.dart';
 import 'package:food_ninja/views/message_screen/message_page_provider.dart';
+import 'bloc_example_pages/get_user_input/task_page_provider.dart';
+import 'bloc_example_pages/get_user_input/task_page_view.dart';
 import 'router/router.dart' as router;
 import 'themes/custom_themes.dart';
 import 'views/call_ringing_page/call_ringing_page_provider.dart';
@@ -17,6 +21,7 @@ import 'views/notification_page/notification_page_provider.dart';
 import 'views/onboarding_screens/onboarding_screen_one.dart';
 import 'views/onboarding_screens/onboarding_screen_three.dart';
 import 'views/onboarding_screens/onboarding_screen_two.dart';
+import 'views/order_details_page/order_details_page_provider.dart';
 import 'views/payment_method_page/payment_method_page_bloc.dart';
 import 'views/rate_food_page/rate_food_page_provider.dart';
 import 'views/reset_password_page/reset_password_page_provider.dart';
@@ -47,13 +52,16 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => PaymentMethodPageBloc(context),
         ),
+        BlocProvider(
+          create: (context) => TaskDetailsPageBloc(context),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
         onGenerateRoute: router.generateRoute,
         theme: CustomThemes.lightTheme(context),
         // initialRoute: OBScreenOneRoute,
-        home: SignupProcessPageProvider(),
+        home: OrdrDetailsPageProvider(),
       ),
     );
   }

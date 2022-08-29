@@ -30,6 +30,7 @@ import 'package:food_ninja/views/via_method_page/via_method_page_bloc.dart';
 import 'package:food_ninja/views/via_method_page/via_method_page_provider.dart';
 import 'package:food_ninja/views/vouchar_promo_page/vouchar_promo_page_provider.dart';
 
+import '../views/order_details_page/order_details_page_provider.dart';
 import '../views/sign_up_page/sign_up_page_provider.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -149,6 +150,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case notificationRoute:
       return MaterialPageRoute(
         builder: ((context) => NotificationPageProvider()),
+      );
+    case OrderDetailsRoute:
+      return MaterialPageRoute(
+        builder: ((context) => OrdrDetailsPageProvider()),
       );
     default:
       return MaterialPageRoute(
