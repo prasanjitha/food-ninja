@@ -23,6 +23,7 @@ import 'views/onboarding_screens/onboarding_screen_three.dart';
 import 'views/onboarding_screens/onboarding_screen_two.dart';
 import 'views/order_details_page/order_details_page_provider.dart';
 import 'views/payment_method_page/payment_method_page_bloc.dart';
+import 'views/payments_page/payments_page_provider.dart';
 import 'views/rate_food_page/rate_food_page_provider.dart';
 import 'views/reset_password_page/reset_password_page_provider.dart';
 import 'views/signIn_page/sign_in_page_provider.dart';
@@ -61,7 +62,7 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: router.generateRoute,
         theme: CustomThemes.lightTheme(context),
         // initialRoute: OBScreenOneRoute,
-        home: OrdrDetailsPageProvider(),
+        home: PaymentsPageProvider(),
       ),
     );
   }
