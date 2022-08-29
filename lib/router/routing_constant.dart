@@ -32,3 +32,4 @@ const String RateResturatRoute = 'rateResturat';
 const String VoucharPromoRoute = 'voucharPromo';
 const String notificationRoute = 'notification';
 const String OrderDetailsRoute = 'orderDetailsRoute';
+const String PaymentsRoute = 'payments';
