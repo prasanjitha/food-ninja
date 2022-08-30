@@ -33,3 +33,5 @@ const String VoucharPromoRoute = 'voucharPromo';
 const String notificationRoute = 'notification';
 const String OrderDetailsRoute = 'orderDetailsRoute';
 const String PaymentsRoute = 'payments';
+const String EditLocationRoute = 'editLocation';
+const String YourOrdersRoute = 'yourOrders';

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/views/call_ringing_page/call_ringing_page_provider.dart';
 import 'package:food_ninja/views/calling_page/calling_page_provider.dart';
+import 'package:food_ninja/views/edit_location_page/edit_location_page_provider.dart';
 import 'package:food_ninja/views/explore_menu_page/explore_menu_page_provider.dart';
 import 'package:food_ninja/views/explore_menu_with_filter_page/explore_menu_with_filter_page_provider.dart';
 import 'package:food_ninja/views/explore_resturant_page/explore_resturant_page_provider.dart';
@@ -30,6 +31,7 @@ import 'package:food_ninja/views/upload_image_page/upload_image_page_provider.da
 import 'package:food_ninja/views/via_method_page/via_method_page_bloc.dart';
 import 'package:food_ninja/views/via_method_page/via_method_page_provider.dart';
 import 'package:food_ninja/views/vouchar_promo_page/vouchar_promo_page_provider.dart';
+import 'package:food_ninja/views/your_orders_page/your_orders_page_provider.dart';
 
 import '../views/order_details_page/order_details_page_provider.dart';
 import '../views/sign_up_page/sign_up_page_provider.dart';
@@ -159,6 +161,14 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case PaymentsRoute:
       return MaterialPageRoute(
         builder: ((context) => PaymentsPageProvider()),
+      );
+    case EditLocationRoute:
+      return MaterialPageRoute(
+        builder: ((context) => EditLocationPageProvider()),
+      );
+    case YourOrdersRoute:
+      return MaterialPageRoute(
+        builder: ((context) => YourOrdersPageProvider()),
       );
     default:
       return MaterialPageRoute(

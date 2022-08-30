@@ -12,6 +12,7 @@ import 'bloc_example_pages/get_user_input/task_page_view.dart';
 import 'router/router.dart' as router;
 import 'themes/custom_themes.dart';
 import 'views/call_ringing_page/call_ringing_page_provider.dart';
+import 'views/edit_location_page/edit_location_page_provider.dart';
 import 'views/explore_menu_with_filter_page/explore_menu_with_filter_page_provider.dart';
 import 'views/explore_resturant_page/explore_resturant_page_view.dart';
 import 'views/explore_resturant_page_with_filter/explore_resturant_with_filter_page_provider.dart';
@@ -32,6 +33,8 @@ import 'views/signup_process_page/signup_process_page_bloc.dart';
 import 'views/signup_process_page/signup_process_page_provider.dart';
 import 'views/vouchar_promo_page/vouchar_promo_page_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
+
+import 'views/your_orders_page/your_orders_page_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -62,7 +65,7 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: router.generateRoute,
         theme: CustomThemes.lightTheme(context),
         // initialRoute: OBScreenOneRoute,
-        home: PaymentsPageProvider(),
+        home: YourOrdersPageProvider(),
       ),
     );
   }
