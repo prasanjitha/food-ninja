@@ -20,6 +20,7 @@ import 'package:food_ninja/views/onboarding_screens/onboarding_screen_two.dart';
 import 'package:food_ninja/views/onboarding_screens/success_notification_screen.dart';
 import 'package:food_ninja/views/payment_method_page/payment_method_page_provider.dart';
 import 'package:food_ninja/views/payments_page/payments_page_provider.dart';
+import 'package:food_ninja/views/product_details_page/product_details_page_provider.dart';
 import 'package:food_ninja/views/rate_food_page/rate_food_page_provider.dart';
 import 'package:food_ninja/views/rate_resturant_page/rate_resturant_page_provider.dart';
 import 'package:food_ninja/views/reset_password_page/reset_password_page_provider.dart';
@@ -169,6 +170,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case YourOrdersRoute:
       return MaterialPageRoute(
         builder: ((context) => YourOrdersPageProvider()),
+      );
+    case ProductDetailsRoute:
+      return MaterialPageRoute(
+        builder: ((context) => ProductDetailsPageProvider()),
       );
     default:
       return MaterialPageRoute(
