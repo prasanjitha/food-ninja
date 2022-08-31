@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
 
+import '../../widgets/custom_button.dart';
 import '../../widgets/popular_menu_item.dart';
 import '../../widgets/testimonials_item.dart';
+import '../../widgets/unordered_item.dart';
 
-class ProductDetailsPageView extends StatefulWidget {
-  const ProductDetailsPageView({Key? key}) : super(key: key);
+class DetailsMenuPageView extends StatefulWidget {
+  const DetailsMenuPageView({Key? key}) : super(key: key);
 
   @override
-  _ProductDetailsPageViewState createState() => _ProductDetailsPageViewState();
+  _DetailsMenuPageViewState createState() => _DetailsMenuPageViewState();
 }
 
-class _ProductDetailsPageViewState extends State<ProductDetailsPageView> {
+class _DetailsMenuPageViewState extends State<DetailsMenuPageView> {
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
@@ -28,7 +30,7 @@ class _ProductDetailsPageViewState extends State<ProductDetailsPageView> {
                 ),
                 Positioned(
                   child: Image.asset(
-                    'assets/home/PhotoRestaurant.png',
+                    'assets/home/PhotoMenu01.png',
                   ),
                 ),
                 Positioned(
@@ -67,7 +69,7 @@ class _ProductDetailsPageViewState extends State<ProductDetailsPageView> {
                           Align(
                             alignment: Alignment.bottomLeft,
                             child: Text(
-                              'Wijie Bar and Resto',
+                              'Rainbow Sandwich Sugarless',
                               style: Theme.of(context).textTheme.headline3,
                               textAlign: TextAlign.start,
                             ),
@@ -121,41 +123,32 @@ class _ProductDetailsPageViewState extends State<ProductDetailsPageView> {
                           const SizedBox(
                             height: 20.0,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Popular Menu',
-                                style: Theme.of(context).textTheme.headline3,
-                                textAlign: TextAlign.start,
-                              ),
-                              Text(
-                                'View All',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline3!
-                                    .copyWith(
-                                      color: CustomColors.ORANGE,
-                                    ),
-                                textAlign: TextAlign.start,
-                              ),
-                            ],
+                          const UnorderedListItem(
+                            title: 'Strowberry',
+                          ),
+                          const SizedBox(
+                            height: 10.0,
+                          ),
+                          const UnorderedListItem(
+                            title: 'Cream',
+                          ),
+                          const SizedBox(
+                            height: 10.0,
+                          ),
+                          const UnorderedListItem(
+                            title: 'Wheat',
                           ),
                           const SizedBox(
                             height: 20.0,
                           ),
-                          Row(
-                            children: const [
-                              PopularMenuItem(
-                                iconPath: 'assets/home/image34.png',
-                              ),
-                              SizedBox(
-                                width: 20.0,
-                              ),
-                              PopularMenuItem(
-                                iconPath: 'assets/home/image32.png',
-                              ),
-                            ],
+                          Text(
+                            'Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Velit non est cillum consequat cupidatat ex Lorem laboris labore aliqua ad duis eu laborum.Strowberry Cream wheat Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt.',
+                            style:
+                                Theme.of(context).textTheme.headline5!.copyWith(
+                                      color: CustomColors.SECONDARY,
+                                    ),
+                            textAlign: TextAlign.start,
+                            maxLines: 4,
                           ),
                           const SizedBox(
                             height: 20.0,
@@ -190,6 +183,18 @@ class _ProductDetailsPageViewState extends State<ProductDetailsPageView> {
               ],
             )
           ],
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+        child: CustomButton(
+          text: 'Add to Cart',
+          tap: () {
+            // Navigator.pushNamed(
+            //   context,
+            //   SignupSuccessRoute,
+            // );
+          },
         ),
       ),
     );

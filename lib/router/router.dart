@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/views/call_ringing_page/call_ringing_page_provider.dart';
 import 'package:food_ninja/views/calling_page/calling_page_provider.dart';
+import 'package:food_ninja/views/details_menu_page/details_menu_page_provider.dart';
 import 'package:food_ninja/views/edit_location_page/edit_location_page_provider.dart';
 import 'package:food_ninja/views/explore_menu_page/explore_menu_page_provider.dart';
 import 'package:food_ninja/views/explore_menu_with_filter_page/explore_menu_with_filter_page_provider.dart';
@@ -174,6 +175,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case ProductDetailsRoute:
       return MaterialPageRoute(
         builder: ((context) => ProductDetailsPageProvider()),
+      );
+    case DetailsMenuRoute:
+      return MaterialPageRoute(
+        builder: ((context) => DetailsMenuPageProvider()),
       );
     default:
       return MaterialPageRoute(
