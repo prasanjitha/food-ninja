@@ -36,3 +36,4 @@ const String PaymentsRoute = 'payments';
 const String EditLocationRoute = 'editLocation';
 const String YourOrdersRoute = 'yourOrders';
 const String ProductDetailsRoute = 'productDetails';
+const String DetailsMenuRoute = 'detailsMenu';
