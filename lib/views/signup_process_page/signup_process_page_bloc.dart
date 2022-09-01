@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:food_ninja/Api/url/db_util.dart';
 import 'package:food_ninja/models/user_data.dart';
 import 'signup_process_page_event.dart';
 import 'signup_process_page_state.dart';
@@ -13,8 +14,7 @@ class SignupProcessPageBloc
   SignupProcessPageBloc(BuildContext context)
       : super(SignupProcessPageState.initialState) {
     on<GetUserInputEvent>((event, emit) async {
-      var url =
-          'https://food-ninja-ad983-default-rtdb.firebaseio.com/users.json';
+      var url = Environment.BASE_URL;
       late http.Response response;
 
       response = await http.post(Uri.parse(url),
