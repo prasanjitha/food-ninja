@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/widgets/activate_title.dart';
 import 'package:food_ninja/widgets/back_icon_button.dart';
@@ -7,6 +8,8 @@ import '../../themes/custom_colors.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_icon_button.dart';
 import '../../widgets/custom_text_field.dart';
+import 'sign_up_page_bloc.dart';
+import 'sign_up_page_event.dart';
 
 class SignUpPageView extends StatefulWidget {
   const SignUpPageView({Key? key}) : super(key: key);
@@ -16,8 +19,13 @@ class SignUpPageView extends StatefulWidget {
 }
 
 class _SignUpPageViewState extends State<SignUpPageView> {
+  final _formKey = GlobalKey<FormState>();
+  TextEditingController nameTextEditingController = TextEditingController();
+  TextEditingController emailTextEditingController = TextEditingController();
+  TextEditingController passwordTextEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    SignUpPageBloc bloc = BlocProvider.of<SignUpPageBloc>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Center(
@@ -52,24 +60,34 @@ class _SignUpPageViewState extends State<SignUpPageView> {
                 const SizedBox(
                   height: 20.0,
                 ),
-                CustomTextFormField(
-                  prefixIconPath: 'assets/icons/Profile.png',
-                  hintText: 'Amaltha',
-                ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                CustomTextFormField(
-                  prefixIconPath: 'assets/icons/Message.png',
-                  hintText: 'Email',
-                ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                CustomTextFormField(
-                  prefixIconPath: 'assets/icons/Lock.png',
-                  hintText: 'Password',
-                  obscureText: true,
+                Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      CustomTextFormField(
+                        controller: nameTextEditingController,
+                        prefixIconPath: 'assets/icons/Profile.png',
+                        hintText: 'Amaltha',
+                      ),
+                      const SizedBox(
+                        height: 10.0,
+                      ),
+                      CustomTextFormField(
+                        controller: emailTextEditingController,
+                        prefixIconPath: 'assets/icons/Message.png',
+                        hintText: 'Email',
+                      ),
+                      const SizedBox(
+                        height: 10.0,
+                      ),
+                      CustomTextFormField(
+                        controller: passwordTextEditingController,
+                        prefixIconPath: 'assets/icons/Lock.png',
+                        hintText: 'Password',
+                        obscureText: true,
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(
                   height: 20.0,
@@ -85,10 +103,21 @@ class _SignUpPageViewState extends State<SignUpPageView> {
                 CustomButton(
                   text: 'Create Account',
                   tap: () {
-                    Navigator.popAndPushNamed(
-                      context,
-                      SignupProcessRoute,
-                    );
+                    if (_formKey.currentState!.validate()) {
+                      _formKey.currentState!.save();
+
+                      bloc.add(
+                        SubmitUserDetaEvent(
+                          email: emailTextEditingController.text.trim(),
+                          name: nameTextEditingController.text.trim(),
+                          password: passwordTextEditingController.text.trim(),
+                        ),
+                      );
+                    }
+                    // Navigator.popAndPushNamed(
+                    //   context,
+                    //   SignupProcessRoute,
+                    // );
                   },
                   fontSize: 18.0,
                 ),
