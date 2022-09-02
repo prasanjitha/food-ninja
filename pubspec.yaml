@@ -38,6 +38,7 @@ dependencies:
   bloc: ^8.0.2
   http: ^0.13.4
   firebase_core: ^1.21.1
+  firebase_auth: ^3.7.0
 
 dev_dependencies:
   flutter_test:
