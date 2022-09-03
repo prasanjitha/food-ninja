@@ -114,10 +114,10 @@ class _SignUpPageViewState extends State<SignUpPageView> {
                         ),
                       );
                     }
-                    // Navigator.popAndPushNamed(
-                    //   context,
-                    //   SignupProcessRoute,
-                    // );
+                    Navigator.popAndPushNamed(
+                      context,
+                      SignInRoute,
+                    );
                   },
                   fontSize: 18.0,
                 ),

@@ -7,6 +7,7 @@ import 'package:food_ninja/views/explore_menu_page/explore_menu_page_bloc.dart';
 import 'package:food_ninja/views/explore_menu_page/explore_menu_page_provider.dart';
 import 'package:food_ninja/views/main_home_page/main_home_page_provider.dart';
 import 'package:food_ninja/views/message_screen/message_page_provider.dart';
+import 'package:food_ninja/views/signIn_page/home_screens/authenticate.dart';
 import 'bloc_example_pages/get_user_input/task_page_provider.dart';
 import 'bloc_example_pages/get_user_input/task_page_view.dart';
 import 'router/router.dart' as router;
@@ -72,7 +73,7 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: router.generateRoute,
         theme: CustomThemes.lightTheme(context),
         // initialRoute: OBScreenOneRoute,
-        home: SignUpPageProvider(),
+        home: Authenticate(),
       ),
     );
   }

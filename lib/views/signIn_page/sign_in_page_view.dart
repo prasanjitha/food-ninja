@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
+import 'package:food_ninja/views/sign_up_page/sign_up_page_provider.dart';
 import 'package:food_ninja/widgets/back_icon_button.dart';
 import 'package:food_ninja/widgets/custom_button.dart';
 import 'package:food_ninja/widgets/custom_icon_button.dart';
 import 'package:food_ninja/widgets/custom_text_field.dart';
+
+import 'sign_in_page_bloc.dart';
+import 'sign_in_page_event.dart';
 
 class SignINPageView extends StatefulWidget {
   const SignINPageView({Key? key}) : super(key: key);
@@ -14,8 +19,13 @@ class SignINPageView extends StatefulWidget {
 }
 
 class _SignINPageViewState extends State<SignINPageView> {
+  late TextEditingController nameTextEditingController =
+      TextEditingController();
+  late TextEditingController passwordTextEditingController =
+      TextEditingController();
   @override
   Widget build(BuildContext context) {
+    SignINPageBloc bloc = BlocProvider.of<SignINPageBloc>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Center(
@@ -50,11 +60,14 @@ class _SignINPageViewState extends State<SignINPageView> {
                 const SizedBox(
                   height: 20.0,
                 ),
-                CustomTextFormField(hintText: 'email'),
+                CustomTextFormField(
+                    controller: nameTextEditingController, hintText: 'email'),
                 const SizedBox(
                   height: 10.0,
                 ),
-                CustomTextFormField(hintText: 'password'),
+                CustomTextFormField(
+                    controller: passwordTextEditingController,
+                    hintText: 'password'),
                 const SizedBox(
                   height: 10.0,
                 ),
@@ -83,12 +96,21 @@ class _SignINPageViewState extends State<SignINPageView> {
                 const SizedBox(
                   height: 10.0,
                 ),
-                Text(
-                  'Forgot Your Password?',
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline5!
-                      .copyWith(color: CustomColors.LIGHTGREEN),
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: ((context) => SignUpPageProvider()),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'Forgot Your Password?',
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline5!
+                        .copyWith(color: CustomColors.LIGHTGREEN),
+                  ),
                 ),
                 const SizedBox(
                   height: 10.0,
@@ -96,7 +118,10 @@ class _SignINPageViewState extends State<SignINPageView> {
                 CustomButton(
                   text: 'Login',
                   tap: () {
-                    Navigator.pushNamed(context, SignupProcessRoute);
+                    bloc.add(LoginEvent(
+                        email: nameTextEditingController.text,
+                        password: passwordTextEditingController.text));
+                    // Navigator.pushNamed(context, SignupProcessRoute);
                   },
                 )
               ],
