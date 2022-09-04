@@ -8,6 +8,8 @@ import 'package:food_ninja/views/explore_menu_page/explore_menu_page_provider.da
 import 'package:food_ninja/views/main_home_page/main_home_page_provider.dart';
 import 'package:food_ninja/views/message_screen/message_page_provider.dart';
 import 'package:food_ninja/views/signIn_page/home_screens/authenticate.dart';
+import 'package:food_ninja/views/upload_image_page/upload_image_page_bloc.dart';
+import 'package:food_ninja/views/upload_image_page/upload_image_page_provider.dart';
 import 'bloc_example_pages/get_user_input/task_page_provider.dart';
 import 'bloc_example_pages/get_user_input/task_page_view.dart';
 import 'router/router.dart' as router;
@@ -21,6 +23,7 @@ import 'views/explore_resturant_page_with_filter/explore_resturant_with_filter_p
 import 'views/finish_order_page/finish_order_page_provider.dart';
 import 'views/get_title_page/get_title_details_page/get_title_details_page_bloc.dart';
 import 'views/get_title_page/get_title_page_provider.dart';
+import 'views/image_preview_page/image_preview_page_bloc.dart';
 import 'views/message_details_screen/message_detail_page_provider.dart';
 import 'views/notification_page/notification_page_provider.dart';
 import 'views/onboarding_screens/onboarding_screen_one.dart';
@@ -33,6 +36,7 @@ import 'views/product_details_page/product_details_page_provider.dart';
 import 'views/profile_details_page/profile_details_page_provider.dart';
 import 'views/rate_food_page/rate_food_page_provider.dart';
 import 'views/reset_password_page/reset_password_page_provider.dart';
+import 'views/signIn_page/home_screens/test_screen.dart';
 import 'views/signIn_page/sign_in_page_provider.dart';
 import 'views/sign_up_page/sign_up_page_provider.dart';
 import 'views/signup_process_page/signup_process_page_bloc.dart';
@@ -67,13 +71,19 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => TaskDetailsPageBloc(context),
         ),
+        BlocProvider(
+          create: (context) => UploadImagePageBloc(context),
+        ),
+        BlocProvider(
+          create: (context) => ImagePreviewPageBloc(context),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
         onGenerateRoute: router.generateRoute,
         theme: CustomThemes.lightTheme(context),
         // initialRoute: OBScreenOneRoute,
-        home: Authenticate(),
+        home: TestScreen(),
       ),
     );
   }
