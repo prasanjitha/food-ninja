@@ -141,7 +141,7 @@ class _ChatRoomsState extends State<ChatRooms> {
         reverse: true,
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: size.height / 1.25,
               width: size.width,
               child: StreamBuilder<QuerySnapshot>(
