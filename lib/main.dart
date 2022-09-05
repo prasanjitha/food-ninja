@@ -14,6 +14,7 @@ import 'bloc_example_pages/get_user_input/task_page_provider.dart';
 import 'bloc_example_pages/get_user_input/task_page_view.dart';
 import 'router/router.dart' as router;
 import 'themes/custom_themes.dart';
+import 'views/add_products/add_phone_page/add_phone_page_view.dart';
 import 'views/call_ringing_page/call_ringing_page_provider.dart';
 import 'views/details_menu_page/details_menu_page_provider.dart';
 import 'views/edit_location_page/edit_location_page_provider.dart';
@@ -83,7 +84,7 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: router.generateRoute,
         theme: CustomThemes.lightTheme(context),
         // initialRoute: OBScreenOneRoute,
-        home: TestScreen(),
+        home: AddPhonePageView(),
       ),
     );
   }
