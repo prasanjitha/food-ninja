@@ -43,6 +43,8 @@ dependencies:
   firebase_storage: ^10.3.7
   image_picker: ^0.8.3+2
   uuid: ^3.0.6
+  form_field_validator: ^1.1.0
+  dropdown_plus: ^0.0.9
 
 dev_dependencies:
   flutter_test:
