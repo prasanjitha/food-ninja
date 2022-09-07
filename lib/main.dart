@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_ninja/bloc_example_pages/api_call/post_page_provider.dart';
 import 'package:food_ninja/bloc_example_pages/get_user_input/task_details_page/task_details_page_bloc.dart';
 import 'package:food_ninja/router/routing_constant.dart';
+import 'package:food_ninja/screens/home_page/home_page_bloc.dart';
 import 'package:food_ninja/views/explore_menu_page/explore_menu_page_bloc.dart';
 import 'package:food_ninja/views/explore_menu_page/explore_menu_page_provider.dart';
 import 'package:food_ninja/views/main_home_page/main_home_page_provider.dart';
@@ -13,6 +14,9 @@ import 'package:food_ninja/views/upload_image_page/upload_image_page_provider.da
 import 'bloc_example_pages/get_user_input/task_page_provider.dart';
 import 'bloc_example_pages/get_user_input/task_page_view.dart';
 import 'router/router.dart' as router;
+import 'screens/add_product_page/add_new_product_page_bloc.dart';
+import 'screens/add_product_page/add_new_product_page_provider.dart';
+import 'screens/home_page/home_page_provider.dart';
 import 'themes/custom_themes.dart';
 import 'views/add_products/add_phone_page/add_phone_page_provider.dart';
 import 'views/add_products/add_phone_page/add_phone_page_view.dart';
@@ -79,13 +83,19 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => ImagePreviewPageBloc(context),
         ),
+        BlocProvider(
+          create: (context) => AddNewProductPageBloc(context),
+        ),
+        BlocProvider(
+          create: (context) => HomePageBloc(context),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
         onGenerateRoute: router.generateRoute,
         theme: CustomThemes.lightTheme(context),
         // initialRoute: OBScreenOneRoute,
-        home: AddPhonePageProvider(),
+        home: AddNewProductPageProvider(),
       ),
     );
   }
