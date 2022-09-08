@@ -48,7 +48,7 @@ class _SuccessNotificationScreenState extends State<SuccessNotificationScreen> {
           tap: () {
             Navigator.pushNamed(
               context,
-              MainHomePageRoute,
+              SignInRoute,
             );
           },
         ),

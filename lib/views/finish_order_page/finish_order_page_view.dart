@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
 import 'package:food_ninja/widgets/skip_buttom.dart';
 
@@ -61,25 +62,32 @@ class _FinishOrderPageViewState extends State<FinishOrderPageView> {
       ),
       bottomNavigationBar: Container(
         width: width,
-        height: 65.0,
+        height: 95.0,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
           child: Row(
             children: [
               CustomButton(
                 text: 'Submit',
                 width: 230.0,
                 tap: () {
-                  // Navigator.pushNamed(
-                  //   context,
-                  //   SignupSuccessRoute,
-                  // );
+                  Navigator.pushNamed(
+                    context,
+                    RateFoodRoute,
+                  );
                 },
               ),
               const SizedBox(
                 width: 10.0,
               ),
-              const SkipButton(),
+              InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      VoucharPromoRoute,
+                    );
+                  },
+                  child: const SkipButton()),
             ],
           ),
         ),

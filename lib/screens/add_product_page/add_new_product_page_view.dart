@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../views/add_products/add_phone_page/add_phone_page_view.dart';
 import '../home_page/home_page_bloc.dart';
 import '../home_page/home_page_event.dart';

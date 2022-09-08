@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
 import 'package:food_ninja/widgets/order_details_cart.dart';
 import 'package:food_ninja/widgets/payment_details_card.dart';
@@ -42,7 +43,13 @@ class _PaymentsPageViewState extends State<PaymentsPageView> {
               const SizedBox(
                 height: 20.0,
               ),
-              const PaymentDetailsCard(
+              PaymentDetailsCard(
+                tap: () {
+                  Navigator.pushNamed(
+                    context,
+                    EditLocationRoute,
+                  );
+                },
                 title: 'Deliver To',
                 iconPath: 'assets/home/IconLocation.png',
                 hint: '4517 Washington Ave. Manchester, Kentucky 39495',
@@ -50,7 +57,13 @@ class _PaymentsPageViewState extends State<PaymentsPageView> {
               const SizedBox(
                 height: 20.0,
               ),
-              const PaymentDetailsCard(
+              PaymentDetailsCard(
+                tap: () {
+                  Navigator.pushNamed(
+                    context,
+                    EditLocationRoute,
+                  );
+                },
                 title: 'Payment Method',
                 iconPath: 'assets/icons/paypal.png',
                 hint: '4517 9495 3476 ....',
@@ -58,7 +71,14 @@ class _PaymentsPageViewState extends State<PaymentsPageView> {
               const SizedBox(
                 height: 20.0,
               ),
-              const PlaceMyOrderCard(),
+              PlaceMyOrderCard(
+                tap: () {
+                  Navigator.pushNamed(
+                    context,
+                    MainHomePageRoute,
+                  );
+                },
+              ),
             ],
           ),
         ),

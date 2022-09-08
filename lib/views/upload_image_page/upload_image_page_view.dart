@@ -136,10 +136,10 @@ class _UploadImagePageViewState extends State<UploadImagePageView> {
                     builder: ((context) => ImagePreviewPageView(
                           img: state.imgUrl,
                         ))));
-                // Navigator.pushNamed(
-                //   context,
-                //   ImagePreviewRoute,
-                // );
+                Navigator.pushNamed(
+                  context,
+                  ImagePreviewRoute,
+                );
               },
             ),
           ),

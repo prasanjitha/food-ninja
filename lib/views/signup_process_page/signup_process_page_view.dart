@@ -117,10 +117,10 @@ class _SignupProcessPageViewState extends State<SignupProcessPageView> {
                 mobile: mobileController.text.trim(),
               ),
             );
-            // Navigator.pushNamed(
-            //   context,
-            //   PaymentMethodRoute,
-            // );
+            Navigator.pushNamed(
+              context,
+              PaymentMethodRoute,
+            );
           },
         ),
       ),

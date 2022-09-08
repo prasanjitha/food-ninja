@@ -78,7 +78,7 @@ class _ImagePreviewPageViewState extends State<ImagePreviewPageView> {
                         return ClipRRect(
                           borderRadius: BorderRadius.circular(15),
                           child: Image.network(
-                            widget.img.toString(),
+                            'https://cdn.pixabay.com/photo/2014/07/31/22/50/photographer-407068_960_720.jpg',
                             width: 245.0,
                             height: 245.0,
                             fit: BoxFit.cover,

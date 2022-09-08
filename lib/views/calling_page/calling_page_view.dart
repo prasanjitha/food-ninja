@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
 
 class CallingPageView extends StatefulWidget {
@@ -41,11 +42,25 @@ class _CallingPageViewState extends State<CallingPageView> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('assets/home/MuteIcon.png'),
+              InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      CallRingingRoute,
+                    );
+                  },
+                  child: Image.asset('assets/home/MuteIcon.png')),
               const SizedBox(
                 width: 20.0,
               ),
-              Image.asset('assets/home/CloseRedIcon.png'),
+              InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      FinishOrderRoute,
+                    );
+                  },
+                  child: Image.asset('assets/home/CloseRedIcon.png')),
             ],
           )
         ],
