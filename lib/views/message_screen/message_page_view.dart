@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
 import 'package:food_ninja/widgets/chat_item.dart';
 
@@ -41,10 +42,18 @@ class _MessagePageViewState extends State<MessagePageView> {
               const SizedBox(
                 height: 20.0,
               ),
-              const ChatItem(
-                imageUrl:
-                    "https://cdn.pixabay.com/photo/2015/07/09/00/29/woman-837156_960_720.jpg",
-                name: 'Anamwp',
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    MessageDetailsRoute,
+                  );
+                },
+                child: const ChatItem(
+                  imageUrl:
+                      "https://cdn.pixabay.com/photo/2015/07/09/00/29/woman-837156_960_720.jpg",
+                  name: 'Anamwp',
+                ),
               ),
               const SizedBox(
                 height: 20.0,

@@ -42,8 +42,16 @@ class _MainHomePageViewState extends State<MainHomePageView> {
                         borderRadius: BorderRadius.circular(20.0),
                         border:
                             Border.all(color: CustomColors.PRIMARY_VARIANT)),
-                    child: Center(
-                      child: Image.asset('assets/home/IconNotifiaction.png'),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          notificationRoute,
+                        );
+                      },
+                      child: Center(
+                        child: Image.asset('assets/home/IconNotifiaction.png'),
+                      ),
                     ),
                   )
                 ],
@@ -64,7 +72,14 @@ class _MainHomePageViewState extends State<MainHomePageView> {
                   const SizedBox(
                     width: 10.0,
                   ),
-                  Image.asset('assets/home/FilterIcon.png'),
+                  InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          FilterRoute,
+                        );
+                      },
+                      child: Image.asset('assets/home/FilterIcon.png')),
                 ],
               ),
               const SizedBox(
@@ -108,12 +123,20 @@ class _MainHomePageViewState extends State<MainHomePageView> {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  NearestResturantItem(
-                    imagePath: 'assets/home/ResturantImage.png',
-                    title: 'Vegan Resto',
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        ProductDetailsRoute,
+                      );
+                    },
+                    child: const NearestResturantItem(
+                      imagePath: 'assets/home/ResturantImage.png',
+                      title: 'Vegan Resto',
+                    ),
                   ),
-                  NearestResturantItem(
+                  const NearestResturantItem(
                     imagePath: 'assets/home/RestaurantImage.png',
                     title: 'Vegan Resto',
                   ),
@@ -129,53 +152,71 @@ class _MainHomePageViewState extends State<MainHomePageView> {
                     'Popular Menu',
                     style: Theme.of(context).textTheme.headline4,
                   ),
-                  Text(
-                    'view more',
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline4!
-                        .copyWith(color: CustomColors.ORANGE),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        ExploreMenuRoute,
+                      );
+                    },
+                    child: Text(
+                      'view more',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline4!
+                          .copyWith(color: CustomColors.ORANGE),
+                    ),
                   ),
                 ],
               ),
               const SizedBox(
                 height: 20.0,
               ),
-              Container(
-                width: width,
-                height: 90.0,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15.0),
-                    border: Border.all(color: CustomColors.ONSURFACE)),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 20.0, vertical: 10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Image.asset('assets/home/PhotoMenu.png'),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Green Noddle',
-                            style: Theme.of(context).textTheme.headline4,
-                          ),
-                          const SizedBox(
-                            height: 10.0,
-                          ),
-                          Text(
-                            'Noddle Home',
-                            style:
-                                Theme.of(context).textTheme.headline4!.copyWith(
-                                      color: CustomColors.PRIMARY_VARIANT,
-                                    ),
-                          ),
-                        ],
-                      ),
-                      Image.asset('assets/home/Price.png'),
-                    ],
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    DetailsMenuRoute,
+                  );
+                },
+                child: Container(
+                  width: width,
+                  height: 90.0,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15.0),
+                      border: Border.all(color: CustomColors.ONSURFACE)),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20.0, vertical: 10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Image.asset('assets/home/PhotoMenu.png'),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Green Noddles',
+                              style: Theme.of(context).textTheme.headline4,
+                            ),
+                            const SizedBox(
+                              height: 10.0,
+                            ),
+                            Text(
+                              'Noddle Home',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline4!
+                                  .copyWith(
+                                    color: CustomColors.PRIMARY_VARIANT,
+                                  ),
+                            ),
+                          ],
+                        ),
+                        Image.asset('assets/home/Price.png'),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -195,9 +236,30 @@ class _MainHomePageViewState extends State<MainHomePageView> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Image.asset('assets/home/IconHomeActive.png'),
-              Image.asset('assets/home/IconProfile.png'),
-              Image.asset('assets/home/IconCart.png'),
-              Image.asset('assets/home/Chat.png'),
+              InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      ProfileDetailsRoute,
+                    );
+                  },
+                  child: Image.asset('assets/home/IconProfile.png')),
+              InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      YourOrdersRoute,
+                    );
+                  },
+                  child: Image.asset('assets/home/IconCart.png')),
+              InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      MessageRoute,
+                    );
+                  },
+                  child: Image.asset('assets/home/Chat.png')),
             ],
           ),
         ),

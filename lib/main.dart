@@ -95,7 +95,7 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: router.generateRoute,
         theme: CustomThemes.lightTheme(context),
         // initialRoute: OBScreenOneRoute,
-        home: AddNewProductPageProvider(),
+        home: const OBScreenOne(),
       ),
     );
   }

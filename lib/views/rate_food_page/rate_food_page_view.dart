@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
 import 'package:food_ninja/widgets/skip_buttom.dart';
 
@@ -70,16 +71,23 @@ class _RateFoodPageViewState extends State<RateFoodPageView> {
                 text: 'Submit',
                 width: 230.0,
                 tap: () {
-                  // Navigator.pushNamed(
-                  //   context,
-                  //   SignupSuccessRoute,
-                  // );
+                  Navigator.pushNamed(
+                    context,
+                    RateResturatRoute,
+                  );
                 },
               ),
               const SizedBox(
                 width: 10.0,
               ),
-              const SkipButton(),
+              InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      VoucharPromoRoute,
+                    );
+                  },
+                  child: const SkipButton()),
             ],
           ),
         ),

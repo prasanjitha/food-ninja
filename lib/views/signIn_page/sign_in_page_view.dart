@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
 import 'package:food_ninja/views/sign_up_page/sign_up_page_provider.dart';
-import 'package:food_ninja/widgets/back_icon_button.dart';
 import 'package:food_ninja/widgets/custom_button.dart';
 import 'package:food_ninja/widgets/custom_icon_button.dart';
 import 'package:food_ninja/widgets/custom_text_field.dart';
@@ -98,11 +97,7 @@ class _SignINPageViewState extends State<SignINPageView> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: ((context) => SignUpPageProvider()),
-                      ),
-                    );
+                    Navigator.pushNamed(context, VIaMethodRoute);
                   },
                   child: Text(
                     'Forgot Your Password?',
@@ -121,7 +116,7 @@ class _SignINPageViewState extends State<SignINPageView> {
                     bloc.add(LoginEvent(
                         email: nameTextEditingController.text,
                         password: passwordTextEditingController.text));
-                    // Navigator.pushNamed(context, SignupProcessRoute);
+                    Navigator.pushNamed(context, MainHomePageRoute);
                   },
                 )
               ],

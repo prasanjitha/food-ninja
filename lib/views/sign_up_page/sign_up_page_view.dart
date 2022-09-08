@@ -116,7 +116,7 @@ class _SignUpPageViewState extends State<SignUpPageView> {
                     }
                     Navigator.popAndPushNamed(
                       context,
-                      SignInRoute,
+                      SignupProcessRoute,
                     );
                   },
                   fontSize: 18.0,

@@ -96,7 +96,7 @@ class _YourOrdersPageViewState extends State<YourOrdersPageView> {
           tap: () {
             Navigator.pushNamed(
               context,
-              VIaMethodRoute,
+              OrderDetailsRoute,
             );
           },
         ),

@@ -50,7 +50,7 @@ class _SignUpSuccessPageViewState extends State<SignUpSuccessPageView> {
           tap: () {
             Navigator.pushNamed(
               context,
-              VIaMethodRoute,
+              MainHomePageRoute,
             );
           },
         ),

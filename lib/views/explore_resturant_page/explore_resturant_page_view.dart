@@ -79,9 +79,17 @@ class _ExploreResturantPageViewState extends State<ExploreResturantPageView> {
               const SizedBox(
                 height: 20.0,
               ),
-              Text(
-                'Nearest Restaurant',
-                style: Theme.of(context).textTheme.headline3,
+              InkWell(
+                // onTap: () {
+                //   Navigator.pushNamed(
+                //     context,
+                //     ExploreRestturantPageRoute,
+                //   );
+                // },
+                child: Text(
+                  'Nearest Restaurant',
+                  style: Theme.of(context).textTheme.headline3,
+                ),
               ),
               const SizedBox(
                 height: 20.0,

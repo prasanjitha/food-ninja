@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:food_ninja/router/routing_constant.dart';
-import 'package:food_ninja/themes/custom_colors.dart';
 import 'package:food_ninja/widgets/custom_button.dart';
 
 class OBScreenOne extends StatelessWidget {

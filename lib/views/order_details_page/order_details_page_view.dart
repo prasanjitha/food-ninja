@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
 import 'package:food_ninja/widgets/order_details_cart.dart';
 
@@ -65,7 +66,14 @@ class _OrdrDetailsPageViewState extends State<OrdrDetailsPageView> {
               const SizedBox(
                 height: 20.0,
               ),
-              const PlaceMyOrderCard(),
+              PlaceMyOrderCard(
+                tap: () {
+                  Navigator.pushNamed(
+                    context,
+                    PaymentsRoute,
+                  );
+                },
+              ),
             ],
           ),
         ),

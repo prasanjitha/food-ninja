@@ -79,9 +79,17 @@ class _ExploreMenuPageViewState extends State<ExploreMenuPageView> {
               const SizedBox(
                 height: 20.0,
               ),
-              Text(
-                'Popular Menu',
-                style: Theme.of(context).textTheme.headline3,
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    ExploreMenuWithFilterRoute,
+                  );
+                },
+                child: Text(
+                  'Popular Menu',
+                  style: Theme.of(context).textTheme.headline3,
+                ),
               ),
               const SizedBox(
                 height: 20.0,

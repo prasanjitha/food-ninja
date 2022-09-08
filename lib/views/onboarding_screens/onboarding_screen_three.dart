@@ -43,7 +43,7 @@ class OBScreenThree extends StatelessWidget {
             ),
             CustomButton(
               tap: () {
-                Navigator.pushNamed(context, SignInRoute);
+                Navigator.pushNamed(context, SignUpRoute);
               },
             )
           ],

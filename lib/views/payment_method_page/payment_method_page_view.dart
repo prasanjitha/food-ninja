@@ -5,15 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/views/payment_method_page/payment_method_page_event.dart';
 import 'package:food_ninja/views/payment_method_page/payment_method_page_state.dart';
-import 'package:food_ninja/views/signup_process_page/signup_process_page_state.dart';
 import 'package:food_ninja/widgets/payment_method_container.dart';
-
-import '../../themes/custom_colors.dart';
-import '../../widgets/activate_title.dart';
 import '../../widgets/back_icon_button.dart';
 import '../../widgets/custom_button.dart';
-import '../../widgets/custom_text_field.dart';
-import '../signup_process_page/signup_process_page_bloc.dart';
 import 'payment_method_page_bloc.dart';
 
 class PaymentMethodPageView extends StatefulWidget {
