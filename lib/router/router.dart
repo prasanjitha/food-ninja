@@ -51,7 +51,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       );
     case OBScreenThreeRoute:
       return MaterialPageRoute(
-        builder: ((context) => OBScreenThree()),
+        builder: ((context) => const OBScreenThree()),
       );
     case SignInRoute:
       return MaterialPageRoute(
