@@ -75,10 +75,56 @@ class _SignUpPageViewState extends State<SignUpPageView> {
               ),
               const CustomButtom(
                 title: 'SIGN UP',
-              )
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Center(
+                child: Text('Or sign up with social account',
+                    style: Theme.of(context).textTheme.headline4,
+                    textAlign: TextAlign.center),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: const [
+                  SocialImageButton(
+                    iconPath: 'assets/ecom/Group.png',
+                  ),
+                  SocialImageButton(
+                    iconPath:
+                        'assets/ecom/iconfinder_square-facebook_317727.png',
+                  ),
+                ],
+              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class SocialImageButton extends StatelessWidget {
+  final String iconPath;
+  const SocialImageButton({
+    Key? key,
+    required this.iconPath,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 100.0,
+      height: 68.0,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20.0),
+        color: CustomColors.BACKGROUND,
+      ),
+      child: Center(
+        child: Image.asset(iconPath),
       ),
     );
   }
