@@ -6,6 +6,7 @@ import 'package:food_ninja/views/sign_up_page/sign_up_page_provider.dart';
 import 'package:food_ninja/widgets/custom_button.dart';
 import 'package:food_ninja/widgets/custom_icon_button.dart';
 import 'package:food_ninja/widgets/custom_text_field.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 
 import 'sign_in_page_bloc.dart';
 import 'sign_in_page_event.dart';
@@ -22,6 +23,7 @@ class _SignINPageViewState extends State<SignINPageView> {
       TextEditingController();
   late TextEditingController passwordTextEditingController =
       TextEditingController();
+  final GlobalKey<FormState> _key = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     SignINPageBloc bloc = BlocProvider.of<SignINPageBloc>(context);
@@ -59,14 +61,34 @@ class _SignINPageViewState extends State<SignINPageView> {
                 const SizedBox(
                   height: 20.0,
                 ),
-                CustomTextFormField(
-                    controller: nameTextEditingController, hintText: 'email'),
+                Form(
+                  key: _key,
+                  child: Column(
+                    children: [
+                      CustomTextFormField(
+                          validator:
+                              RequiredValidator(errorText: "Email is required"),
+                          controller: nameTextEditingController,
+                          hintText: 'email'),
+                      const SizedBox(
+                        height: 10.0,
+                      ),
+                      CustomTextFormField(
+                          validator: RequiredValidator(
+                              errorText: "Password is required"),
+                          controller: passwordTextEditingController,
+                          hintText: 'password'),
+                    ],
+                  ),
+                ),
                 const SizedBox(
                   height: 10.0,
                 ),
-                CustomTextFormField(
-                    controller: passwordTextEditingController,
-                    hintText: 'password'),
+                // CustomTextFormField(
+                //     validator:
+                //         RequiredValidator(errorText: "Password is required"),
+                //     controller: passwordTextEditingController,
+                //     hintText: 'password'),
                 const SizedBox(
                   height: 10.0,
                 ),
@@ -113,10 +135,12 @@ class _SignINPageViewState extends State<SignINPageView> {
                 CustomButton(
                   text: 'Login',
                   tap: () {
-                    bloc.add(LoginEvent(
-                        email: nameTextEditingController.text,
-                        password: passwordTextEditingController.text));
-                    Navigator.pushNamed(context, MainHomePageRoute);
+                    if (_key.currentState!.validate()) {
+                      // bloc.add(LoginEvent(
+                      //     email: nameTextEditingController.text,
+                      //     password: passwordTextEditingController.text));
+                      Navigator.pushNamed(context, MainHomePageRoute);
+                    }
                   },
                 )
               ],

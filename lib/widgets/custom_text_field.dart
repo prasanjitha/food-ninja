@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 
 import '../themes/custom_colors.dart';
 
@@ -9,6 +10,8 @@ class CustomTextFormField extends StatefulWidget {
   final void Function(String)? onChange;
   final TextEditingController? controller;
   final Color fillColor;
+  final FieldValidator validator;
+  final String inputType;
 
   CustomTextFormField({
     Key? key,
@@ -17,6 +20,8 @@ class CustomTextFormField extends StatefulWidget {
     this.obscureText = false,
     this.onChange,
     this.controller,
+    required this.validator,
+    this.inputType = 'text',
     this.fillColor = CustomColors.BACKGROUND,
   }) : super(key: key);
 
@@ -28,6 +33,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: widget.inputType == 'text'
+          ? TextInputType.text
+          : TextInputType.number,
+      validator: widget.validator,
       obscureText: widget.obscureText,
       onChanged: widget.onChange,
       controller: widget.controller,
@@ -36,7 +45,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             ? Image.asset(widget.prefixIconPath)
             : const Text(''),
         counterText: "",
-        errorStyle: const TextStyle(fontSize: 0.028),
+        // errorStyle: const TextStyle(fontSize: 0.028),
         hintText: widget.hintText,
         isDense: true,
         contentPadding: const EdgeInsets.fromLTRB(20, 28, 0, 0),

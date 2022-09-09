@@ -86,41 +86,41 @@ class _UploadImagePageViewState extends State<UploadImagePageView> {
                   const SizedBox(
                     height: 10.0,
                   ),
-                  const Text(
-                    "What is your gender?",
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  const Divider(),
-                  RadioListTile(
-                    title: const Text("Male"),
-                    value: "male",
-                    groupValue: gender,
-                    onChanged: (value) {
-                      setState(() {
-                        gender = value.toString();
-                      });
-                    },
-                  ),
-                  RadioListTile(
-                    title: const Text("Female"),
-                    value: "female",
-                    groupValue: gender,
-                    onChanged: (value) {
-                      setState(() {
-                        gender = value.toString();
-                      });
-                    },
-                  ),
-                  RadioListTile(
-                    title: const Text("Other"),
-                    value: "other",
-                    groupValue: gender,
-                    onChanged: (value) {
-                      setState(() {
-                        gender = value.toString();
-                      });
-                    },
-                  )
+                  // const Text(
+                  //   "What is your gender?",
+                  //   style: TextStyle(fontSize: 18),
+                  // ),
+                  // const Divider(),
+                  // RadioListTile(
+                  //   title: const Text("Male"),
+                  //   value: "male",
+                  //   groupValue: gender,
+                  //   onChanged: (value) {
+                  //     setState(() {
+                  //       gender = value.toString();
+                  //     });
+                  //   },
+                  // ),
+                  // RadioListTile(
+                  //   title: const Text("Female"),
+                  //   value: "female",
+                  //   groupValue: gender,
+                  //   onChanged: (value) {
+                  //     setState(() {
+                  //       gender = value.toString();
+                  //     });
+                  //   },
+                  // ),
+                  // RadioListTile(
+                  //   title: const Text("Other"),
+                  //   value: "other",
+                  //   groupValue: gender,
+                  //   onChanged: (value) {
+                  //     setState(() {
+                  //       gender = value.toString();
+                  //     });
+                  //   },
+                  // )
                 ],
               ),
             ),

@@ -29,6 +29,8 @@ class _ProductDetailsPageViewState extends State<ProductDetailsPageView> {
                 Positioned(
                   child: Image.asset(
                     'assets/home/PhotoRestaurant.png',
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
                 ),
                 Positioned(

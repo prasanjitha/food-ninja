@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
 import 'package:food_ninja/widgets/skip_buttom.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text_field.dart';
@@ -53,6 +54,7 @@ class _RateFoodPageViewState extends State<RateFoodPageView> {
                 height: 20.0,
               ),
               CustomTextFormField(
+                validator: RequiredValidator(errorText: "FeedBack is required"),
                 prefixIconPath: 'assets/home/editIcon.png',
                 hintText: 'Leave feedback',
               ),

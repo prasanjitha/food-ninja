@@ -31,6 +31,8 @@ class _DetailsMenuPageViewState extends State<DetailsMenuPageView> {
                 Positioned(
                   child: Image.asset(
                     'assets/home/PhotoMenu01.png',
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
                 ),
                 Positioned(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
 import 'package:food_ninja/widgets/nearest_resturant_item.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text_field.dart';
@@ -48,6 +49,8 @@ class _YourOrdersPageViewState extends State<YourOrdersPageView> {
                 children: [
                   Expanded(
                     child: CustomTextFormField(
+                      validator:
+                          RequiredValidator(errorText: "Order is required"),
                       prefixIconPath: 'assets/home/IconSearch.png',
                       hintText: 'What do you want to order?',
                       fillColor: CustomColors.LIGHTPINK,

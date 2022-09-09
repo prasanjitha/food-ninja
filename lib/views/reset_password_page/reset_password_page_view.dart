@@ -4,6 +4,7 @@ import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
 import 'package:food_ninja/views/reset_password_page/reset_password_page_event.dart';
 import 'package:food_ninja/widgets/via_method.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 
 import '../../widgets/back_icon_button.dart';
 import '../../widgets/custom_button.dart';
@@ -55,6 +56,7 @@ class _ResetPasswordPageViewState extends State<ResetPasswordPageView> {
                 height: 40.0,
               ),
               CustomTextFormField(
+                validator: RequiredValidator(errorText: "Password is required"),
                 controller: null,
                 onChange: (_) {
                   bloc.add(ChangeNewPasswordEvent(_));
@@ -65,6 +67,7 @@ class _ResetPasswordPageViewState extends State<ResetPasswordPageView> {
                 height: 10.0,
               ),
               CustomTextFormField(
+                validator: RequiredValidator(errorText: "Password is required"),
                 controller: null,
                 onChange: (_) {
                   bloc.add(ChangeConPasswordEvent(_));
