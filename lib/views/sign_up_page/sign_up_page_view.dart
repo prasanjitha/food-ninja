@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/widgets/activate_title.dart';
 import 'package:food_ninja/widgets/back_icon_button.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 
 import '../../themes/custom_colors.dart';
 import '../../widgets/custom_button.dart';
@@ -65,6 +66,8 @@ class _SignUpPageViewState extends State<SignUpPageView> {
                   child: Column(
                     children: [
                       CustomTextFormField(
+                        validator: RequiredValidator(
+                            errorText: "Username is required"),
                         controller: nameTextEditingController,
                         prefixIconPath: 'assets/icons/Profile.png',
                         hintText: 'Amaltha',
@@ -73,6 +76,8 @@ class _SignUpPageViewState extends State<SignUpPageView> {
                         height: 10.0,
                       ),
                       CustomTextFormField(
+                        validator:
+                            RequiredValidator(errorText: "Email is required"),
                         controller: emailTextEditingController,
                         prefixIconPath: 'assets/icons/Message.png',
                         hintText: 'Email',
@@ -81,6 +86,8 @@ class _SignUpPageViewState extends State<SignUpPageView> {
                         height: 10.0,
                       ),
                       CustomTextFormField(
+                        validator: RequiredValidator(
+                            errorText: "Password is required"),
                         controller: passwordTextEditingController,
                         prefixIconPath: 'assets/icons/Lock.png',
                         hintText: 'Password',
@@ -106,18 +113,18 @@ class _SignUpPageViewState extends State<SignUpPageView> {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
 
-                      bloc.add(
-                        SubmitUserDetaEvent(
-                          email: emailTextEditingController.text.trim(),
-                          name: nameTextEditingController.text.trim(),
-                          password: passwordTextEditingController.text.trim(),
-                        ),
+                      // bloc.add(
+                      //   SubmitUserDetaEvent(
+                      //     email: emailTextEditingController.text.trim(),
+                      //     name: nameTextEditingController.text.trim(),
+                      //     password: passwordTextEditingController.text.trim(),
+                      //   ),
+                      // );
+                      Navigator.popAndPushNamed(
+                        context,
+                        SignupProcessRoute,
                       );
                     }
-                    Navigator.popAndPushNamed(
-                      context,
-                      SignupProcessRoute,
-                    );
                   },
                   fontSize: 18.0,
                 ),

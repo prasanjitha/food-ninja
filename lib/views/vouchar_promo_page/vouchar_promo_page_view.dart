@@ -42,11 +42,19 @@ class _VoucharPromoPageViewState extends State<VoucharPromoPageView> {
               const SizedBox(
                 height: 20.0,
               ),
-              Image.asset('assets/home/VoucherPromo.png'),
+              Image.asset(
+                'assets/home/VoucherPromo.png',
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
               const SizedBox(
                 height: 20.0,
               ),
-              Image.asset('assets/home/VoucherPromo1.png'),
+              Image.asset(
+                'assets/home/VoucherPromo1.png',
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
             ],
           ),
         ),

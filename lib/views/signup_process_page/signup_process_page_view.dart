@@ -7,6 +7,7 @@ import 'package:food_ninja/views/payment_method_page/payment_method_page_event.d
 import 'package:food_ninja/views/signup_process_page/signup_process_page_event.dart';
 import 'package:food_ninja/views/signup_process_page/signup_process_page_state.dart';
 import 'package:food_ninja/widgets/back_icon_button.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text_field.dart';
 import '../payment_method_page/payment_method_page_bloc.dart';
@@ -60,17 +61,27 @@ class _SignupProcessPageViewState extends State<SignupProcessPageView> {
                   height: 40.0,
                 ),
                 CustomTextFormField(
-                    controller: firstNameController, hintText: 'First Name'),
+                    validator:
+                        RequiredValidator(errorText: "First Name is required"),
+                    controller: firstNameController,
+                    hintText: 'First Name'),
                 const SizedBox(
                   height: 10.0,
                 ),
                 CustomTextFormField(
-                    controller: lastNameController, hintText: 'Last Name'),
+                    validator:
+                        RequiredValidator(errorText: "Last Name is required"),
+                    controller: lastNameController,
+                    hintText: 'Last Name'),
                 const SizedBox(
                   height: 10.0,
                 ),
                 CustomTextFormField(
-                    controller: mobileController, hintText: 'Mobile Number'),
+                    inputType: 'number',
+                    validator: RequiredValidator(
+                        errorText: "Mobile Number is required"),
+                    controller: mobileController,
+                    hintText: 'Mobile Number'),
                 const SizedBox(
                   height: 10.0,
                 ),

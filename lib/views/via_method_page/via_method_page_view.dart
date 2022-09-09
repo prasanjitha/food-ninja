@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/router/routing_constant.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
 import 'package:food_ninja/widgets/via_method.dart';
 
@@ -67,10 +68,10 @@ class _ViaMethodPageViewState extends State<ViaMethodPageView> {
         child: CustomButton(
           text: 'Next',
           tap: () {
-            // Navigator.pushNamed(
-            //   context,
-            //   SignupSuccessRoute,
-            // );
+            Navigator.pushNamed(
+              context,
+              ResetPasswordRoute,
+            );
           },
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_ninja/router/routing_constant.dart';
 
 import '../../themes/custom_colors.dart';
 import '../../widgets/favorite_item.dart';
@@ -33,6 +34,8 @@ class _ProfileDetailsPageViewState extends State<ProfileDetailsPageView> {
                 Positioned(
                   child: Image.asset(
                     'assets/home/PhotoProfilenew.png',
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
                 ),
                 Positioned(
@@ -89,29 +92,37 @@ class _ProfileDetailsPageViewState extends State<ProfileDetailsPageView> {
                           const SizedBox(
                             height: 20.0,
                           ),
-                          Container(
-                            height: 65.0,
-                            width: size.width,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.0),
-                              border: Border.all(
-                                color: CustomColors.LIGHTGREY,
+                          InkWell(
+                            onTap: () {
+                              Navigator.popAndPushNamed(
+                                context,
+                                VoucharPromoRoute,
+                              );
+                            },
+                            child: Container(
+                              height: 65.0,
+                              width: size.width,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20.0),
+                                border: Border.all(
+                                  color: CustomColors.LIGHTGREY,
+                                ),
                               ),
-                            ),
-                            child: Center(
-                              child: Row(
-                                children: [
-                                  Image.asset('assets/home/VoucherIcon.png'),
-                                  const SizedBox(
-                                    width: 40.0,
-                                  ),
-                                  Text(
-                                    'You Have 3 Voucher',
-                                    style:
-                                        Theme.of(context).textTheme.headline4,
-                                    textAlign: TextAlign.start,
-                                  ),
-                                ],
+                              child: Center(
+                                child: Row(
+                                  children: [
+                                    Image.asset('assets/home/VoucherIcon.png'),
+                                    const SizedBox(
+                                      width: 40.0,
+                                    ),
+                                    Text(
+                                      'You Have 3 Voucher',
+                                      style:
+                                          Theme.of(context).textTheme.headline4,
+                                      textAlign: TextAlign.start,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
