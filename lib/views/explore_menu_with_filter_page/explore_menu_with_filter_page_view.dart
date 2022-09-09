@@ -49,11 +49,7 @@ class _ExploreMenuWithFilterPageViewState
                         border:
                             Border.all(color: CustomColors.PRIMARY_VARIANT)),
                     child: Center(
-                      child: Image.asset(
-                        'assets/home/IconNotifiaction.png',
-                        width: double.infinity,
-                        fit: BoxFit.cover,
-                      ),
+                      child: Image.asset('assets/home/IconNotifiaction.png'),
                     ),
                   )
                 ],
