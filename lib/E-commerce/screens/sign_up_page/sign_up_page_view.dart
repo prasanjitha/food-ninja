@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
 
+import '../../widgets/custom_bottom_line.dart';
+import '../../widgets/custom_button.dart';
+import '../../widgets/custom_fill_text_field.dart';
+import '../../widgets/social_image_button.dart';
+
 class SignUpPageView extends StatefulWidget {
   const SignUpPageView({Key? key}) : super(key: key);
 
@@ -103,95 +108,7 @@ class _SignUpPageViewState extends State<SignUpPageView> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class SocialImageButton extends StatelessWidget {
-  final String iconPath;
-  const SocialImageButton({
-    Key? key,
-    required this.iconPath,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 100.0,
-      height: 68.0,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.0),
-        color: CustomColors.BACKGROUND,
-      ),
-      child: Center(
-        child: Image.asset(iconPath),
-      ),
-    );
-  }
-}
-
-class CustomButtom extends StatelessWidget {
-  final String title;
-  const CustomButtom({
-    Key? key,
-    required this.title,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 48.0,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.0),
-        color: CustomColors.ERROR,
-      ),
-      child: Center(
-        child: Text(
-          title,
-          style: Theme.of(context).textTheme.headline3!.copyWith(
-                color: CustomColors.BACKGROUND,
-                letterSpacing: 1.0,
-              ),
-        ),
-      ),
-    );
-  }
-}
-
-class CustomFillTextField extends StatefulWidget {
-  final String title;
-  final TextEditingController? controller;
-  const CustomFillTextField({
-    Key? key,
-    required this.title,
-    this.controller,
-  }) : super(key: key);
-
-  @override
-  State<CustomFillTextField> createState() => _CustomFillTextFieldState();
-}
-
-class _CustomFillTextFieldState extends State<CustomFillTextField> {
-  String name = '';
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      onChanged: (value) {
-        setState(() {
-          name = value;
-        });
-      },
-      controller: widget.controller,
-      decoration: InputDecoration(
-        suffixIcon: name.isNotEmpty
-            ? Image.asset('assets/ecom/outline-check-24px.png')
-            : const Text(''),
-        border: InputBorder.none,
-        hintText: widget.title,
-        filled: true,
-        fillColor: CustomColors.BACKGROUND,
-      ),
+      bottomNavigationBar: const CustomBottomLine(),
     );
   }
 }
