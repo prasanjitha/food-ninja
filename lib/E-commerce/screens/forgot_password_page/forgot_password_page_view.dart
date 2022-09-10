@@ -52,7 +52,8 @@ class _ForgotPasswordPageViewState extends State<ForgotPasswordPageView> {
               const SizedBox(
                 height: 60.0,
               ),
-              const CustomButtom(
+              CustomButtom(
+                tap: () {},
                 title: 'SEND',
               ),
             ],

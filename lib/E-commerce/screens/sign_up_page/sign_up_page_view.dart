@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_ninja/E-commerce/screens/sign_up_page/sign_up_page_state.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
+import 'package:food_ninja/views/add_products/add_phone_page/add_phone_page_view.dart';
 
 import '../../widgets/custom_bottom_line.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_fill_text_field.dart';
+import '../../widgets/ecom_progress_indicator.dart';
 import '../../widgets/social_image_button.dart';
+import 'sign_up_page_bloc.dart';
+import 'sign_up_page_event.dart';
 
 class SignUpPageView extends StatefulWidget {
   const SignUpPageView({Key? key}) : super(key: key);
@@ -14,11 +20,10 @@ class SignUpPageView extends StatefulWidget {
 }
 
 class _SignUpPageViewState extends State<SignUpPageView> {
-  late TextEditingController nameTextEditingController =
-      TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    SignUpPageBloc signUpBloc = BlocProvider.of<SignUpPageBloc>(context);
+    var scaffold = Scaffold(
       backgroundColor: CustomColors.SCAFFOLD,
       appBar: AppBar(
         backgroundColor: CustomColors.SCAFFOLD,
@@ -41,19 +46,21 @@ class _SignUpPageViewState extends State<SignUpPageView> {
                 height: 40.0,
               ),
               CustomFillTextField(
-                controller: nameTextEditingController,
+                controller: signUpBloc.nameTextEditingController,
                 title: 'Name',
               ),
               const SizedBox(
                 height: 20.0,
               ),
-              const CustomFillTextField(
+              CustomFillTextField(
+                controller: signUpBloc.emailTextEditingController,
                 title: 'Email',
               ),
               const SizedBox(
                 height: 20.0,
               ),
-              const CustomFillTextField(
+              CustomFillTextField(
+                controller: signUpBloc.passwordTextEditingController,
                 title: 'Password',
               ),
               const SizedBox(
@@ -78,7 +85,15 @@ class _SignUpPageViewState extends State<SignUpPageView> {
               const SizedBox(
                 height: 20.0,
               ),
-              const CustomButtom(
+              CustomButtom(
+                tap: () {
+                  signUpBloc.add(SubmitUserDataEvent(
+                    name: signUpBloc.nameTextEditingController.text.trim(),
+                    email: signUpBloc.emailTextEditingController.text.trim(),
+                    password:
+                        signUpBloc.passwordTextEditingController.text.trim(),
+                  ));
+                },
                 title: 'SIGN UP',
               ),
               const SizedBox(
@@ -109,6 +124,18 @@ class _SignUpPageViewState extends State<SignUpPageView> {
         ),
       ),
       bottomNavigationBar: const CustomBottomLine(),
+    );
+
+    return BlocBuilder<SignUpPageBloc, SignUpPageState>(
+      buildWhen: (previous, current) => previous.isLoading != current.isLoading,
+      builder: (context, state) {
+        if (state.isLoading) {
+          return CustomCircularProgressIndicator(
+            body: scaffold,
+          );
+        }
+        return scaffold;
+      },
     );
   }
 }

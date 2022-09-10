@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_ninja/E-commerce/screens/sign_in_page/sign_in_page_state.dart';
+import 'package:food_ninja/E-commerce/widgets/ecom_progress_indicator.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
 
 import '../../widgets/custom_bottom_line.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_fill_text_field.dart';
 import '../../widgets/social_image_button.dart';
+import 'sign_in_page_bloc.dart';
+import 'sign_in_page_event.dart';
 
 class SignInPageView extends StatefulWidget {
   const SignInPageView({Key? key}) : super(key: key);
@@ -14,11 +19,10 @@ class SignInPageView extends StatefulWidget {
 }
 
 class _SignInPageViewState extends State<SignInPageView> {
-  late TextEditingController nameTextEditingController =
-      TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    SignInPageBloc signInBloc = BlocProvider.of<SignInPageBloc>(context);
+    var scaffold = Scaffold(
       backgroundColor: CustomColors.SCAFFOLD,
       appBar: AppBar(
         backgroundColor: CustomColors.SCAFFOLD,
@@ -40,13 +44,15 @@ class _SignInPageViewState extends State<SignInPageView> {
               const SizedBox(
                 height: 40.0,
               ),
-              const CustomFillTextField(
+              CustomFillTextField(
+                controller: signInBloc.emailTextEditingController,
                 title: 'Email',
               ),
               const SizedBox(
                 height: 20.0,
               ),
-              const CustomFillTextField(
+              CustomFillTextField(
+                controller: signInBloc.passwordTextEditingController,
                 title: 'Password',
               ),
               const SizedBox(
@@ -71,7 +77,14 @@ class _SignInPageViewState extends State<SignInPageView> {
               const SizedBox(
                 height: 20.0,
               ),
-              const CustomButtom(
+              CustomButtom(
+                tap: () {
+                  signInBloc.add(SubmitUserDataEvent(
+                    email: signInBloc.emailTextEditingController.text.trim(),
+                    password:
+                        signInBloc.passwordTextEditingController.text.trim(),
+                  ));
+                },
                 title: 'LOGIN',
               ),
               const SizedBox(
@@ -102,6 +115,15 @@ class _SignInPageViewState extends State<SignInPageView> {
         ),
       ),
       bottomNavigationBar: const CustomBottomLine(),
+    );
+    return BlocBuilder<SignInPageBloc, SignInPageState>(
+      buildWhen: (previous, current) => previous.isLoading != current.isLoading,
+      builder: (context, state) {
+        if (state.isLoading) {
+          return CustomCircularProgressIndicator(body: scaffold);
+        }
+        return scaffold;
+      },
     );
   }
 }
