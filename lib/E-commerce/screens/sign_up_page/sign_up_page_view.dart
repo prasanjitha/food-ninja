@@ -1,5 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_ninja/E-commerce/screens/sign_up_page/sign_up_page_state.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
+import 'package:food_ninja/views/add_products/add_phone_page/add_phone_page_view.dart';
+
+import '../../widgets/custom_bottom_line.dart';
+import '../../widgets/custom_button.dart';
+import '../../widgets/custom_fill_text_field.dart';
+import '../../widgets/ecom_progress_indicator.dart';
+import '../../widgets/social_image_button.dart';
+import 'sign_up_page_bloc.dart';
+import 'sign_up_page_event.dart';
 
 class SignUpPageView extends StatefulWidget {
   const SignUpPageView({Key? key}) : super(key: key);
@@ -9,11 +20,10 @@ class SignUpPageView extends StatefulWidget {
 }
 
 class _SignUpPageViewState extends State<SignUpPageView> {
-  late TextEditingController nameTextEditingController =
-      TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    SignUpPageBloc signUpBloc = BlocProvider.of<SignUpPageBloc>(context);
+    var scaffold = Scaffold(
       backgroundColor: CustomColors.SCAFFOLD,
       appBar: AppBar(
         backgroundColor: CustomColors.SCAFFOLD,
@@ -36,19 +46,21 @@ class _SignUpPageViewState extends State<SignUpPageView> {
                 height: 40.0,
               ),
               CustomFillTextField(
-                controller: nameTextEditingController,
+                controller: signUpBloc.nameTextEditingController,
                 title: 'Name',
               ),
               const SizedBox(
                 height: 20.0,
               ),
-              const CustomFillTextField(
+              CustomFillTextField(
+                controller: signUpBloc.emailTextEditingController,
                 title: 'Email',
               ),
               const SizedBox(
                 height: 20.0,
               ),
-              const CustomFillTextField(
+              CustomFillTextField(
+                controller: signUpBloc.passwordTextEditingController,
                 title: 'Password',
               ),
               const SizedBox(
@@ -73,7 +85,15 @@ class _SignUpPageViewState extends State<SignUpPageView> {
               const SizedBox(
                 height: 20.0,
               ),
-              const CustomButtom(
+              CustomButtom(
+                tap: () {
+                  signUpBloc.add(SubmitUserDataEvent(
+                    name: signUpBloc.nameTextEditingController.text.trim(),
+                    email: signUpBloc.emailTextEditingController.text.trim(),
+                    password:
+                        signUpBloc.passwordTextEditingController.text.trim(),
+                  ));
+                },
                 title: 'SIGN UP',
               ),
               const SizedBox(
@@ -103,95 +123,19 @@ class _SignUpPageViewState extends State<SignUpPageView> {
           ),
         ),
       ),
+      bottomNavigationBar: const CustomBottomLine(),
     );
-  }
-}
 
-class SocialImageButton extends StatelessWidget {
-  final String iconPath;
-  const SocialImageButton({
-    Key? key,
-    required this.iconPath,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 100.0,
-      height: 68.0,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.0),
-        color: CustomColors.BACKGROUND,
-      ),
-      child: Center(
-        child: Image.asset(iconPath),
-      ),
-    );
-  }
-}
-
-class CustomButtom extends StatelessWidget {
-  final String title;
-  const CustomButtom({
-    Key? key,
-    required this.title,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 48.0,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.0),
-        color: CustomColors.ERROR,
-      ),
-      child: Center(
-        child: Text(
-          title,
-          style: Theme.of(context).textTheme.headline3!.copyWith(
-                color: CustomColors.BACKGROUND,
-                letterSpacing: 1.0,
-              ),
-        ),
-      ),
-    );
-  }
-}
-
-class CustomFillTextField extends StatefulWidget {
-  final String title;
-  final TextEditingController? controller;
-  const CustomFillTextField({
-    Key? key,
-    required this.title,
-    this.controller,
-  }) : super(key: key);
-
-  @override
-  State<CustomFillTextField> createState() => _CustomFillTextFieldState();
-}
-
-class _CustomFillTextFieldState extends State<CustomFillTextField> {
-  String name = '';
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      onChanged: (value) {
-        setState(() {
-          name = value;
-        });
+    return BlocBuilder<SignUpPageBloc, SignUpPageState>(
+      buildWhen: (previous, current) => previous.isLoading != current.isLoading,
+      builder: (context, state) {
+        if (state.isLoading) {
+          return CustomCircularProgressIndicator(
+            body: scaffold,
+          );
+        }
+        return scaffold;
       },
-      controller: widget.controller,
-      decoration: InputDecoration(
-        suffixIcon: name.isNotEmpty
-            ? Image.asset('assets/ecom/outline-check-24px.png')
-            : const Text(''),
-        border: InputBorder.none,
-        hintText: widget.title,
-        filled: true,
-        fillColor: CustomColors.BACKGROUND,
-      ),
     );
   }
 }
