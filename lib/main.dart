@@ -4,6 +4,7 @@ import 'package:food_ninja/bloc_example_pages/get_user_input/task_details_page/t
 import 'package:food_ninja/screens/home_page/home_page_bloc.dart';
 import 'package:food_ninja/views/upload_image_page/upload_image_page_bloc.dart';
 import 'E-commerce/screens/forgot_password_page/forgot_password_page_provider.dart';
+import 'E-commerce/screens/main_page/main_page_provider.dart';
 import 'E-commerce/screens/sign_in_page/sign_in_page_provider.dart';
 import 'E-commerce/screens/sign_up_page/sign_up_page_provider.dart';
 import 'router/router.dart' as router;
@@ -51,7 +52,7 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: router.generateRoute,
         theme: CustomThemes.lightTheme(context),
         // initialRoute: OBScreenOneRoute,
-        home: SignUpPageProvider(),
+        home: MainPageProvider(),
       ),
     );
   }

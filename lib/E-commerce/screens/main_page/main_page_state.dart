@@ -1,21 +1,21 @@
 import 'package:flutter/foundation.dart';
 
 @immutable
-class HomePageState {
+class MainPageState {
   final String error;
 
-  const HomePageState({
+  const MainPageState({
     required this.error,
   });
 
-  static HomePageState get initialState {
-    return const HomePageState(error: '');
+  static MainPageState get initialState {
+    return const MainPageState(error: '');
   }
 
-  HomePageState clone({
+  MainPageState clone({
     String? error,
   }) {
-    return HomePageState(
+    return MainPageState(
       error: error ?? this.error,
     );
   }
