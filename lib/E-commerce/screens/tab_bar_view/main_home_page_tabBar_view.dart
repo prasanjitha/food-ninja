@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/E-commerce/screens/categories_one_page/categories_one_page_provider.dart';
 import 'package:food_ninja/E-commerce/screens/main_page/main_page_provider.dart';
 import 'package:food_ninja/E-commerce/screens/main_page_one/main_page_one_provider.dart';
 import '../../../themes/custom_colors.dart';
@@ -13,7 +14,7 @@ class MainHomePageTabBarView extends StatefulWidget {
 class _MainHomePageTabBarViewState extends State<MainHomePageTabBarView> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    MainPageProvider(),
+    CategoriesOnePageProvider(),
     MainPageProvider(),
     MainPageOneProvider()
   ];
