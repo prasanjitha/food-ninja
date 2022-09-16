@@ -1,5 +1,11 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
+import '../../widgets/catelog_item_card.dart';
+import '../../widgets/top_catelog_item.dart';
+import 'catelog_one_page_bloc.dart';
 
 class CatelogOnePageView extends StatefulWidget {
   const CatelogOnePageView({Key? key}) : super(key: key);
@@ -12,6 +18,7 @@ class _CatelogOnePageViewState extends State<CatelogOnePageView>
     with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
+    CatelogOnePageBloc bloc = BlocProvider.of<CatelogOnePageBloc>(context);
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -128,38 +135,42 @@ class _CatelogOnePageViewState extends State<CatelogOnePageView>
             ),
           ),
           body: SingleChildScrollView(
-            child: Column(
-              children: [],
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                children: [
+                  CatelogItemCard(bloc: bloc),
+                  const SizedBox(
+                    height: 10.0,
+                  ),
+                  CatelogItemCard(bloc: bloc),
+                  const SizedBox(
+                    height: 10.0,
+                  ),
+                  CatelogItemCard(bloc: bloc),
+                  const SizedBox(
+                    height: 10.0,
+                  ),
+                  CatelogItemCard(bloc: bloc),
+                  const SizedBox(
+                    height: 10.0,
+                  ),
+                  CatelogItemCard(bloc: bloc),
+                  const SizedBox(
+                    height: 10.0,
+                  ),
+                  CatelogItemCard(bloc: bloc),
+                  const SizedBox(
+                    height: 10.0,
+                  ),
+                  CatelogItemCard(bloc: bloc),
+                  const SizedBox(
+                    height: 10.0,
+                  ),
+                ],
+              ),
             ),
           )),
-    );
-  }
-}
-
-class TopCatlogItem extends StatelessWidget {
-  final String title;
-  const TopCatlogItem({
-    Key? key,
-    required this.title,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 100.0,
-      height: 30.0,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15.0),
-        color: CustomColors.ONSURFACE,
-      ),
-      child: Center(
-        child: Text(
-          title,
-          style: Theme.of(context).textTheme.headline4!.copyWith(
-                color: CustomColors.BACKGROUND,
-              ),
-        ),
-      ),
     );
   }
 }
