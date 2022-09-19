@@ -3,6 +3,7 @@ import '../models/chat.dart';
 List<ChatMessage> messages = [
   ChatMessage(messageContent: "Hello, Will", messageType: "receiver"),
   ChatMessage(messageContent: "How have you been?", messageType: "receiver"),
+  ChatMessage(messageContent: "Change image?", messageType: "receiver"),
   ChatMessage(
       messageContent: "Hey Kriss, I am doing fine dude. wbu?",
       messageType: "sender"),
