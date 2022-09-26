@@ -13,8 +13,11 @@ import 'E-commerce/screens/main_page_one/main_page_one_view.dart';
 import 'E-commerce/screens/sign_in_page/sign_in_page_provider.dart';
 import 'E-commerce/screens/sign_up_page/sign_up_page_provider.dart';
 import 'E-commerce/screens/tab_bar_view/main_home_page_tabBar_view.dart';
+import 'grocery/sc/onboard/onboard_screen_one.dart';
+import 'grocery/sc/onboard/splash_screen.dart';
 import 'router/router.dart' as router;
 import 'screens/add_product_page/add_new_product_page_bloc.dart';
+import 'septep/tea_home_page/tea_home_page_provider.dart';
 import 'themes/custom_themes.dart';
 import 'views/image_preview_page/image_preview_page_bloc.dart';
 import 'views/payment_method_page/payment_method_page_bloc.dart';
@@ -75,9 +78,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: SplashScreen(),
     );
   }
 }
