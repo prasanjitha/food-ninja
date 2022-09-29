@@ -41,13 +41,13 @@ class _MainHomePageTabBarViewState extends State<MainHomePageTabBarView> {
             selectedItemColor: CustomColors.ERROR,
             selectedFontSize: 16.0,
             unselectedLabelStyle:
-                const TextStyle(fontSize: 16.0, color: CustomColors.ONSURFACE),
+                const TextStyle(fontSize: 16.0, color: CustomColors.SURFACED),
             elevation: 15,
             onTap: onTabTapped,
             unselectedIconTheme: const IconThemeData(
               color: CustomColors.SECONDARY,
             ),
-            unselectedItemColor: CustomColors.ONSURFACE,
+            unselectedItemColor: CustomColors.SURFACED,
             currentIndex: _currentIndex,
             items: const [
               BottomNavigationBarItem(

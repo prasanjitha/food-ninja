@@ -16,7 +16,7 @@ class PopularMenuItem extends StatelessWidget {
       height: 170.0,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.0),
-        border: Border.all(color: CustomColors.ONSURFACE),
+        border: Border.all(color: CustomColors.SURFACED),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),

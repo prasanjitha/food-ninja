@@ -65,8 +65,8 @@ class _ImagePreviewPageViewState extends State<ImagePreviewPageView> {
                     height: 245.0,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15.0),
-                        border: Border.all(
-                            width: 1, color: CustomColors.ONSURFACE)),
+                        border:
+                            Border.all(width: 1, color: CustomColors.SURFACED)),
                     child: BlocBuilder<ImagePreviewPageBloc,
                         ImagePreviewPageState>(
                       builder: (context, state) {
@@ -98,7 +98,7 @@ class _ImagePreviewPageViewState extends State<ImagePreviewPageView> {
                             color: CustomColors.BACKGROUND),
                         child: const Icon(
                           Icons.close,
-                          color: CustomColors.ONSURFACE,
+                          color: CustomColors.SURFACED,
                         ),
                       ))
                 ],

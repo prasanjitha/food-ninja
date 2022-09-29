@@ -54,7 +54,7 @@ class _SetLocationPageViewState extends State<SetLocationPageView> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.0),
                   border: Border.all(
-                    color: CustomColors.ONSURFACE,
+                    color: CustomColors.SURFACED,
                     width: 1,
                   ),
                 ),

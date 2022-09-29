@@ -23,7 +23,7 @@ class CustomIconButton extends StatelessWidget {
         color: CustomColors.BACKGROUND,
         border: Border.all(
           width: 1.0,
-          color: CustomColors.ONSURFACE,
+          color: CustomColors.SURFACED,
         ),
       ),
       child: Center(

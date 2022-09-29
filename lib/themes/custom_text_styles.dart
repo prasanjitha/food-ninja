@@ -10,31 +10,31 @@ abstract class CustomTextStyles {
   CustomTextStyles._();
 
   static const HEADLINE_LARGE_STYLE = TextStyle(
-    color: CustomColors.ONSURFACE,
+    color: CustomColors.SURFACED,
     fontSize: 48,
     fontWeight: FontWeight.w500,
     fontFamily: 'Roboto',
   );
   static const HEADLINE_MEDIUM_STYLE = TextStyle(
-    color: CustomColors.ONSURFACE,
+    color: CustomColors.SURFACED,
     fontSize: 32,
     fontWeight: FontWeight.w500,
     fontFamily: 'Roboto',
   );
   static const HEADLINE_SMALL_STYLE = TextStyle(
-    color: CustomColors.ONSURFACE,
+    color: CustomColors.SURFACED,
     fontSize: 24,
     fontWeight: FontWeight.w500,
     fontFamily: 'Roboto',
   );
   static const TITLE_MEDIUM_STYLE = TextStyle(
-    color: CustomColors.ONSURFACE,
+    color: CustomColors.SURFACED,
     fontSize: 16,
     fontWeight: FontWeight.w500,
     fontFamily: 'Roboto',
   );
   static const TITLE_SMALL_STYLE = TextStyle(
-    color: CustomColors.ONSURFACE,
+    color: CustomColors.SURFACED,
     fontSize: 14,
     fontWeight: FontWeight.w600,
     fontFamily: 'Roboto',

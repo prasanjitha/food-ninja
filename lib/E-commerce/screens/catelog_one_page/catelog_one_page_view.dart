@@ -30,7 +30,7 @@ class _CatelogOnePageViewState extends State<CatelogOnePageView>
                 padding: EdgeInsets.only(left: 10.0),
                 child: Icon(
                   Icons.arrow_back_ios,
-                  color: CustomColors.ONSURFACE,
+                  color: CustomColors.SURFACED,
                 ),
               ),
               title: Text(
@@ -43,7 +43,7 @@ class _CatelogOnePageViewState extends State<CatelogOnePageView>
                   padding: EdgeInsets.only(right: 10.0),
                   child: Icon(
                     Icons.search,
-                    color: CustomColors.ONSURFACE,
+                    color: CustomColors.SURFACED,
                   ),
                 ),
               ],

@@ -141,7 +141,7 @@ class _SignUpPageViewState extends State<SignUpPageView> {
                   child: Text(
                     'already have an account?',
                     style: Theme.of(context).textTheme.headline5!.copyWith(
-                          color: CustomColors.LIGHTGREEN,
+                          color: CustomColors.EIGHTEEN,
                           decoration: TextDecoration.underline,
                           decorationColor: CustomColors.DARKGREEN,
                           decorationThickness: 1,

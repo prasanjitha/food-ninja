@@ -21,7 +21,7 @@ class ViaMethod extends StatelessWidget {
       height: 106.0,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.0),
-          border: Border.all(color: CustomColors.ONSURFACE)),
+          border: Border.all(color: CustomColors.SURFACED)),
       child: Padding(
         padding: const EdgeInsets.only(
           left: 20.0,

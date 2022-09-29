@@ -21,7 +21,7 @@ class PaymentMethodContainer extends StatelessWidget {
         height: 75.0,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15.0),
-            border: Border.all(width: 1, color: CustomColors.ONSURFACE)),
+            border: Border.all(width: 1, color: CustomColors.SURFACED)),
         child: Center(
           child: Image.asset(
             iconPath,

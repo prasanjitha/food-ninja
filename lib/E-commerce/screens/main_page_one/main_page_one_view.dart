@@ -89,7 +89,7 @@ class CustomNewItem extends StatelessWidget {
             height: 24.0,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30.0),
-              color: CustomColors.ONSURFACE,
+              color: CustomColors.SURFACED,
             ),
             child: Center(
               child: Text(

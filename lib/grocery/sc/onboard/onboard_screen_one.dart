@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/grocery/sc/onboard/onboard_screen_two.dart';
 import 'package:food_ninja/themes/custom_colors.dart';
 
+import '../signup_page/signup_page_provider.dart';
 import '../wg/custom_next_button.dart';
 
 class OnBoardScreenOne extends StatelessWidget {
   const OnBoardScreenOne({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +24,7 @@ class OnBoardScreenOne extends StatelessWidget {
             Text(
               'Secure payment',
               style: Theme.of(context).textTheme.headline4!.copyWith(
-                    color: CustomColors.ONSURFACE,
+                    color: CustomColors.SURFACED,
                     fontWeight: FontWeight.bold,
                   ),
             ),
@@ -31,7 +32,7 @@ class OnBoardScreenOne extends StatelessWidget {
               height: 20.0,
             ),
             Text(
-              'Lorem  ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy',
+              'Lorem  ipsum dolor sit amen, consenter sadipscing elitr, sed diam nonumy',
               style: Theme.of(context).textTheme.subtitle1!.copyWith(),
               textAlign: TextAlign.center,
             ),
@@ -39,18 +40,33 @@ class OnBoardScreenOne extends StatelessWidget {
               height: 20.0,
             ),
             CustomNextButton(
-              tap: () {},
+              tap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: ((context) => const OnBoardScreenTwo()),
+                  ),
+                );
+              },
             ),
             const SizedBox(
               height: 20.0,
             ),
-            Text(
-              'Skip',
-              style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                    color: CustomColors.ONSURFACE,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1.0,
+            InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: ((context) => SignUpPageProvider()),
                   ),
+                );
+              },
+              child: Text(
+                'Skip',
+                style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                      color: CustomColors.SURFACED,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.0,
+                    ),
+              ),
             ),
           ],
         ),

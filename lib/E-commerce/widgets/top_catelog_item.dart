@@ -16,7 +16,7 @@ class TopCatlogItem extends StatelessWidget {
       height: 30.0,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.0),
-        color: CustomColors.ONSURFACE,
+        color: CustomColors.SURFACED,
       ),
       child: Center(
         child: Text(

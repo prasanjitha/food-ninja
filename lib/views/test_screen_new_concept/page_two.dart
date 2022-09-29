@@ -13,7 +13,7 @@ class _PageTwoState extends State<PageTwo> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: CustomColors.LIGHTGREEN,
+      backgroundColor: CustomColors.EIGHTEEN,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,

@@ -187,7 +187,7 @@ class _MainHomePageViewState extends State<MainHomePageView> {
                   height: 90.0,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15.0),
-                      border: Border.all(color: CustomColors.ONSURFACE)),
+                      border: Border.all(color: CustomColors.SURFACED)),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20.0, vertical: 10.0),
