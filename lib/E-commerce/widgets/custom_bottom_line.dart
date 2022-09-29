@@ -13,7 +13,7 @@ class CustomBottomLine extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 80.0, vertical: 20.0),
       child: Container(
         height: 6.0,
-        color: CustomColors.ONSURFACE,
+        color: CustomColors.SURFACED,
       ),
     );
   }

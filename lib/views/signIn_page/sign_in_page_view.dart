@@ -126,7 +126,7 @@ class _SignINPageViewState extends State<SignINPageView> {
                     style: Theme.of(context)
                         .textTheme
                         .headline5!
-                        .copyWith(color: CustomColors.LIGHTGREEN),
+                        .copyWith(color: CustomColors.EIGHTEEN),
                   ),
                 ),
                 const SizedBox(

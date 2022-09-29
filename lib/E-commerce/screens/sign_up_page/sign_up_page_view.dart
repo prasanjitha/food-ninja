@@ -29,7 +29,7 @@ class _SignUpPageViewState extends State<SignUpPageView> {
         backgroundColor: CustomColors.SCAFFOLD,
         leading: const Icon(
           Icons.arrow_back_ios,
-          color: CustomColors.ONSURFACE,
+          color: CustomColors.SURFACED,
         ),
       ),
       body: SingleChildScrollView(

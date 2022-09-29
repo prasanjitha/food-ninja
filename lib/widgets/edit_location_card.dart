@@ -61,7 +61,7 @@ class EditLocationCard extends StatelessWidget {
                     child: Text(
                       'set location',
                       style: Theme.of(context).textTheme.headline4!.copyWith(
-                            color: CustomColors.LIGHTGREEN,
+                            color: CustomColors.EIGHTEEN,
                           ),
                       textAlign: TextAlign.center,
                     ),

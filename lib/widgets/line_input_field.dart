@@ -45,7 +45,7 @@ class _LineInputFeildState extends State<LineInputFeild> {
       validator: widget.validator,
       maxLength: widget.isShowLength ? widget.maxLength : null,
       onChanged: widget.onChange,
-      cursorColor: CustomColors.ONSURFACE,
+      cursorColor: CustomColors.SURFACED,
       decoration: InputDecoration(
         errorStyle: const TextStyle(fontSize: 0.012),
         labelText: widget.labelText,

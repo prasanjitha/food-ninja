@@ -4,9 +4,13 @@ import '../../../themes/custom_colors.dart';
 
 class CustomNextButton extends StatelessWidget {
   final VoidCallback tap;
+  final double width;
+  final String btnText;
   const CustomNextButton({
     Key? key,
     required this.tap,
+    this.width = 200.0,
+    this.btnText = 'Next',
   }) : super(key: key);
 
   @override
@@ -14,7 +18,7 @@ class CustomNextButton extends StatelessWidget {
     return InkWell(
       onTap: tap,
       child: Container(
-        width: 200,
+        width: width,
         height: 42,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
@@ -29,7 +33,7 @@ class CustomNextButton extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            'Next',
+            btnText,
             style: Theme.of(context).textTheme.subtitle1!.copyWith(
                   color: CustomColors.BACKGROUND,
                   fontWeight: FontWeight.bold,

@@ -19,7 +19,7 @@ class ActivateTitle extends StatelessWidget {
           style: Theme.of(context)
               .textTheme
               .headline4!
-              .copyWith(color: CustomColors.ONSURFACE),
+              .copyWith(color: CustomColors.SURFACED),
         ),
       ],
     );

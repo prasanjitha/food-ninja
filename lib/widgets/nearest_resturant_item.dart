@@ -18,7 +18,7 @@ class NearestResturantItem extends StatelessWidget {
       height: 186.0,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.0),
-          border: Border.all(color: CustomColors.ONSURFACE)),
+          border: Border.all(color: CustomColors.SURFACED)),
       child: Column(
         children: [
           const SizedBox(

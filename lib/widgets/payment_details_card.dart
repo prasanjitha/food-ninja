@@ -48,7 +48,7 @@ class PaymentDetailsCard extends StatelessWidget {
                   Text(
                     'Edit',
                     style: Theme.of(context).textTheme.headline4!.copyWith(
-                          color: CustomColors.LIGHTGREEN,
+                          color: CustomColors.EIGHTEEN,
                         ),
                     textAlign: TextAlign.start,
                   ),

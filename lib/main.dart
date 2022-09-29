@@ -15,9 +15,12 @@ import 'E-commerce/screens/sign_up_page/sign_up_page_provider.dart';
 import 'E-commerce/screens/tab_bar_view/main_home_page_tabBar_view.dart';
 import 'grocery/sc/onboard/onboard_screen_one.dart';
 import 'grocery/sc/onboard/splash_screen.dart';
+import 'grocery/sc/signup_page/signup_page_view.dart';
 import 'router/router.dart' as router;
 import 'screens/add_product_page/add_new_product_page_bloc.dart';
 import 'septep/tea_home_page/tea_home_page_provider.dart';
+import 'testin_concepts/register_user_page/register_user_page_provider.dart';
+import 'testin_concepts/user_home_page/user_home_page_bloc.dart';
 import 'themes/custom_themes.dart';
 import 'views/image_preview_page/image_preview_page_bloc.dart';
 import 'views/payment_method_page/payment_method_page_bloc.dart';
@@ -78,10 +81,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => UserHomePageBloc(context),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        onGenerateRoute: router.generateRoute,
+        theme: CustomThemes.lightTheme(context),
+        // initialRoute: OBScreenOneRoute,
+        home: SplashScreen(),
+      ),
     );
+    // return MaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   home: RegisterUserPageProvider(),
+    // );
   }
 }
 

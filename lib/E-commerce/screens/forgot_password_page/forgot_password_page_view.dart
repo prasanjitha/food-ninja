@@ -23,7 +23,7 @@ class _ForgotPasswordPageViewState extends State<ForgotPasswordPageView> {
         backgroundColor: CustomColors.SCAFFOLD,
         leading: const Icon(
           Icons.arrow_back_ios,
-          color: CustomColors.ONSURFACE,
+          color: CustomColors.SURFACED,
         ),
       ),
       body: SingleChildScrollView(

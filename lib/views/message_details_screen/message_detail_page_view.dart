@@ -149,7 +149,7 @@ class _MessageDetailsPageViewState extends State<MessageDetailsPageView> {
                               borderRadius: BorderRadius.circular(20),
                               color: (messages[index].messageType == "receiver"
                                   ? CustomColors.MORELIGHTGREY
-                                  : CustomColors.LIGHTGREEN),
+                                  : CustomColors.EIGHTEEN),
                             ),
                             padding: const EdgeInsets.all(16),
                             child: Text(
@@ -157,7 +157,7 @@ class _MessageDetailsPageViewState extends State<MessageDetailsPageView> {
                               style: Theme.of(context)
                                   .textTheme
                                   .subtitle1!
-                                  .copyWith(color: CustomColors.ONSURFACE),
+                                  .copyWith(color: CustomColors.SURFACED),
                             ),
                           ),
                         ),

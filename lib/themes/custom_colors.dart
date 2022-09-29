@@ -6,13 +6,13 @@ abstract class CustomColors {
   CustomColors._();
   static const Color PRIMARY = Color(0xFF00A99D);
   static const Color SURFACE = Color(0xFFEBEBEB);
-  static const Color ONSURFACE = Color(0xFF09051C);
+  static const Color SURFACED = Color(0xFF09051C);
   static const Color PRIMARY_VARIANT = Color(0xFFB9E4E2);
   static const Color ERROR = Color(0xFFEB5555);
   static const Color SECONDARY = Color(0xFF808080);
   static const Color BACKGROUND = Color(0xFFFFFFFF);
   static const Color SCAFFOLD = Color(0xFFF9F9F9);
-  static const Color LIGHTGREEN = Color(0xFF53E88B);
+  static const Color EIGHTEEN = Color(0xFF53E88B);
   static const Color DARKGREEN = Color(0xFF15BE77);
   static const Color ORANGE = Color(0xFFFF7C32);
   static const Color GRO_GREEN = Color(0xFF1AC57F);

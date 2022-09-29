@@ -17,7 +17,7 @@ class SkipButton extends StatelessWidget {
         child: Text(
           'Skip',
           style: Theme.of(context).textTheme.headline3!.copyWith(
-                color: CustomColors.LIGHTGREEN,
+                color: CustomColors.EIGHTEEN,
               ),
         ),
       ),

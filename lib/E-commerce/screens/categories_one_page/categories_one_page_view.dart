@@ -27,7 +27,7 @@ class _CategoriesOnePageViewState extends State<CategoriesOnePageView>
             child: AppBar(
               leading: const Icon(
                 Icons.arrow_back_ios,
-                color: CustomColors.ONSURFACE,
+                color: CustomColors.SURFACED,
               ),
               title: Text(
                 'Categories',
@@ -37,7 +37,7 @@ class _CategoriesOnePageViewState extends State<CategoriesOnePageView>
               actions: const [
                 Icon(
                   Icons.search,
-                  color: CustomColors.ONSURFACE,
+                  color: CustomColors.SURFACED,
                 ),
               ],
               bottom: TabBar(
