@@ -33,7 +33,7 @@ class FilterIcon extends StatelessWidget {
                   ? Row(
                       children: const [
                         SizedBox(
-                          width: 10.0,
+                          width: 20.0,
                         ),
                         Icon(
                           Icons.close,
