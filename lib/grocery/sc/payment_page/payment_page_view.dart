@@ -14,7 +14,7 @@ class _PaymentMethodPageViewState extends State<PaymentMethodPageView> {
       appBar: AppBar(
         title: const Text("Home"),
       ),
-      body: const Center(child: Text("Home Page View")),
+      body: const Center(child: Text("payment  Page View")),
     );
   }
 }
