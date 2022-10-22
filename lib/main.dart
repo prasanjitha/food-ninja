@@ -138,7 +138,7 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Flutter Notification Details for the implement",
+              "Flutter Notification add Details for the implement",
               style: Theme.of(context).textTheme.headline4,
             ),
             const SizedBox(height: 20),
