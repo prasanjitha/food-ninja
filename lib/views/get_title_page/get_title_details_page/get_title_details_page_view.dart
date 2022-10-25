@@ -28,7 +28,12 @@ class _GetTitleDetailsPageViewState extends State<GetTitleDetailsPageView> {
           previous.isLoading != current.isLoading ||
           previous.error != current.error,
       builder: (context, state) {
-        log('message');
+        if (state.isLoading) {
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+        log('message ');
         log(state.error);
         return Scaffold(
           appBar: AppBar(
