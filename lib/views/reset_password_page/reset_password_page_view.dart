@@ -41,7 +41,7 @@ class _ResetPasswordPageViewState extends State<ResetPasswordPageView> {
                 height: 20.0,
               ),
               Text(
-                'Reset your password here',
+                'Reset your password ',
                 style: Theme.of(context).textTheme.headline2,
                 textAlign: TextAlign.start,
               ),
