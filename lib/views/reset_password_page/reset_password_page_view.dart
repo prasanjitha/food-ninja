@@ -45,6 +45,11 @@ class _ResetPasswordPageViewState extends State<ResetPasswordPageView> {
                 style: Theme.of(context).textTheme.headline2,
                 textAlign: TextAlign.start,
               ),
+              Text(
+                'Of your account ',
+                style: Theme.of(context).textTheme.headline2,
+                textAlign: TextAlign.start,
+              ),
               const SizedBox(
                 height: 20.0,
               ),
