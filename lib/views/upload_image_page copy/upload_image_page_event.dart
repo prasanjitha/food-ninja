@@ -4,3 +4,8 @@ import 'package:flutter/foundation.dart';
 abstract class UploadImagePageEvent {}
 
 class UploadImageEvent extends UploadImagePageEvent {}
+
+class DeleteImageEvent extends UploadImagePageEvent {
+  final String imageID;
+  DeleteImageEvent({required this.imageID});
+}
