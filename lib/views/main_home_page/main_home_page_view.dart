@@ -97,6 +97,7 @@ class _MainHomePageViewState extends State<MainHomePageView> {
               const SizedBox(
                 height: 20.0,
               ),
+              Icon(Icons.email),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
