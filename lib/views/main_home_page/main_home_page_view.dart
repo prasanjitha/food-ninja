@@ -98,6 +98,7 @@ class _MainHomePageViewState extends State<MainHomePageView> {
                 height: 20.0,
               ),
               Icon(Icons.email),
+              Icon(Icons.password),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
