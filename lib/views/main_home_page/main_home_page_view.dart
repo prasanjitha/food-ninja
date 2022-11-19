@@ -106,6 +106,10 @@ class _MainHomePageViewState extends State<MainHomePageView> {
                     'Nearest Restaurant',
                     style: Theme.of(context).textTheme.headline4,
                   ),
+                  Text(
+                    'Api testing',
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
                   InkWell(
                     onTap: () {
                       Navigator.pushNamed(
