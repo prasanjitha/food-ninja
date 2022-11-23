@@ -114,6 +114,10 @@ class _MainHomePageViewState extends State<MainHomePageView> {
                     'Customer feedback api',
                     style: Theme.of(context).textTheme.headline4,
                   ),
+                         Text(
+                    'Customer feedback api',
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
                   InkWell(
                     onTap: () {
                       Navigator.pushNamed(
