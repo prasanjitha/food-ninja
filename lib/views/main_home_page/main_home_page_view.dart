@@ -122,6 +122,10 @@ class _MainHomePageViewState extends State<MainHomePageView> {
                     'Customer feedback api',
                     style: Theme.of(context).textTheme.headline4,
                   ),
+                  Text(
+                    'Google api key',
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
                   Container(),
                   InkWell(
                     onTap: () {
