@@ -127,6 +127,7 @@ class _MainHomePageViewState extends State<MainHomePageView> {
                     style: Theme.of(context).textTheme.headline4,
                   ),
                   Container(),
+                  const Text(''),
                   InkWell(
                     onTap: () {
                       Navigator.pushNamed(
