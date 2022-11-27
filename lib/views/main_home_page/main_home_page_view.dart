@@ -136,7 +136,7 @@ class _MainHomePageViewState extends State<MainHomePageView> {
                       );
                     },
                     child: Text(
-                      'view more',
+                      'map projection',
                       style: Theme.of(context)
                           .textTheme
                           .headline4!
