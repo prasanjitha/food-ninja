@@ -136,7 +136,7 @@ class _MainHomePageViewState extends State<MainHomePageView> {
                       );
                     },
                     child: Text(
-                      'Set up cloud',
+                      'Intergration Testing',
                       style: Theme.of(context)
                           .textTheme
                           .headline4!
