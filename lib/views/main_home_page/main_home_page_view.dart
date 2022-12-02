@@ -136,8 +136,7 @@ class _MainHomePageViewState extends State<MainHomePageView> {
                       );
                     },
                     child: Text(
-                      'Loading spanner
-                      ',
+                      'Integration testing',
                       style: Theme.of(context)
                           .textTheme
                           .headline4!
