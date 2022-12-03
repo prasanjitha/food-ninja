@@ -136,7 +136,7 @@ class _MainHomePageViewState extends State<MainHomePageView> {
                       );
                     },
                     child: Text(
-                      'Integration testing',
+                      'perpormance Testing',
                       style: Theme.of(context)
                           .textTheme
                           .headline4!
