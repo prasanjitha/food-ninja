@@ -136,7 +136,7 @@ class _MainHomePageViewState extends State<MainHomePageView> {
                       );
                     },
                     child: Text(
-                      'Security Testing function modification',
+                      'Improve Image Preview Screen',
                       style: Theme.of(context)
                           .textTheme
                           .headline4!
