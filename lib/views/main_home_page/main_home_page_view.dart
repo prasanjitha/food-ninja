@@ -136,7 +136,7 @@ class _MainHomePageViewState extends State<MainHomePageView> {
                       );
                     },
                     child: Text(
-                      'Improve Image Smoothing Preview Screen Modification',
+                      'Improve Image Smoothing add middleware Screen Modification',
                       style: Theme.of(context)
                           .textTheme
                           .headline4!
