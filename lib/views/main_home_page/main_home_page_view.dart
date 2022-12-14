@@ -136,7 +136,7 @@ class _MainHomePageViewState extends State<MainHomePageView> {
                       );
                     },
                     child: Text(
-                      'Improve MPI Gather Screen Modification',
+                      'Improve MPI Social media Screen Modification',
                       style: Theme.of(context)
                           .textTheme
                           .headline4!
